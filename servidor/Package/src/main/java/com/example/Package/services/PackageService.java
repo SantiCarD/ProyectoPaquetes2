@@ -2,7 +2,7 @@ package com.example.Package.services;
 
 import com.example.Package.models.CulturalPackage;
 import org.springframework.stereotype.Service;
-
+import com.example.Package.exceptions.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,15 +66,15 @@ public class PackageService implements IPackageService {
 
 
 
-    public CulturalPackage createPackage(String nombre, int id, Double precio, LocalDateTime fechaInicio, LocalDateTime fechaFin) throws IllegalArgumentException {
+    public CulturalPackage createPackage(String nombre, int id, Double precio, LocalDateTime fechaInicio, LocalDateTime fechaFin) throws DuplicatedIdException, DuplicatedNameException, InvalidDateRangeException {
         // Verificar si ya existe un paquete con el mismo ID
         if (searchPackage("Id", String.valueOf(id)) != null) {
-            throw new IllegalArgumentException("Ya existe un paquete con este ID.");
+            throw new DuplicatedIdException("Ya existe un paquete con este ID.");
         }
 
         // Verificar si ya existe un paquete con el mismo nombre
         if (searchPackage("Nombre", nombre) != null) {
-            throw new IllegalArgumentException("Ya existe un paquete con este nombre.");
+            throw new DuplicatedNameException("Ya existe un paquete con este nombre.");
         }
 
         // El resto de las validaciones se mantienen igual
@@ -91,7 +91,7 @@ public class PackageService implements IPackageService {
             throw new IllegalArgumentException("Las fechas de inicio y fin no pueden ser nulas.");
         }
         if (fechaInicio.isAfter(fechaFin)) {
-            throw new IllegalArgumentException("La fecha de inicio debe ser anterior a la fecha de fin.");
+            throw new InvalidDateRangeException("La fecha de inicio debe ser anterior a la fecha de fin.");
         }
 
         CulturalPackage paquete = new CulturalPackage(nombre, id, precio, fechaInicio, fechaFin);
@@ -100,41 +100,37 @@ public class PackageService implements IPackageService {
     }
 
 
-    public CulturalPackage updatePackage(int id, String nuevoNombre, Double nuevoPrecio, LocalDateTime nuevaFechaInicio, LocalDateTime nuevaFechaFin) {
+
+    public CulturalPackage updatePackage(int id, String nuevoNombre, Double nuevoPrecio, LocalDateTime nuevaFechaInicio, LocalDateTime nuevaFechaFin) throws PackageNotFoundException, InvalidDateRangeException {
         // Buscar el paquete existente por ID
         CulturalPackage paqueteExistente = searchPackage("Id", String.valueOf(id));
 
         // Verificar si el paquete existe
         if (paqueteExistente == null) {
-            System.out.println("No se encontró un paquete con el ID proporcionado.");
-            return null; // O lanzar una excepción
+            throw new PackageNotFoundException("No se encontró un paquete con el ID proporcionado.");
         }
 
         // Validar que el nuevo nombre no esté vacío
         if (nuevoNombre == null || nuevoNombre.trim().isEmpty()) {
-            System.out.println("El nuevo nombre no puede estar vacío.");
-            return null; // O lanzar una excepción
+            throw new IllegalArgumentException("El nuevo nombre no puede estar vacío.");
         }
 
         // Validar que el nuevo precio sea mayor que 0
         if (nuevoPrecio == null || nuevoPrecio <= 0) {
-            System.out.println("El nuevo precio debe ser mayor que 0.");
-            return null; // O lanzar una excepción
+            throw new IllegalArgumentException("El nuevo precio debe ser mayor que 0.");
         }
 
         // Validar que las nuevas fechas no sean nulas
         if (nuevaFechaInicio == null || nuevaFechaFin == null) {
-            System.out.println("Las nuevas fechas de inicio y fin no pueden ser nulas.");
-            return null; // O lanzar una excepción
+            throw new IllegalArgumentException("Las nuevas fechas de inicio y fin no pueden ser nulas.");
         }
 
         // Validar que la nueva fecha de inicio sea anterior a la fecha de fin
         if (nuevaFechaInicio.isAfter(nuevaFechaFin)) {
-            System.out.println("La nueva fecha de inicio debe ser anterior a la fecha de fin.");
-            return null; // O lanzar una excepción
+            throw new InvalidDateRangeException("La nueva fecha de inicio debe ser anterior a la fecha de fin.");
         }
 
-        // Si las validaciones son correctas, actualizar los atributos del paquete
+        // Actualizar los atributos del paquete
         paqueteExistente.setNombre(nuevoNombre);
         paqueteExistente.setPrecio(nuevoPrecio);
         paqueteExistente.setFechaInicio(nuevaFechaInicio);
@@ -144,19 +140,19 @@ public class PackageService implements IPackageService {
     }
 
 
-    public boolean deletePackage(int id) {
+
+    public boolean deletePackage(int id) throws PackageNotFoundException {
         // Buscar el paquete existente por ID
         CulturalPackage paqueteExistente = searchPackage("Id", String.valueOf(id));
 
         // Verificar si el paquete existe
         if (paqueteExistente == null) {
-            System.out.println("No se encontró un paquete con el ID proporcionado.");
-            return false; // Retorna false si no se encontró el paquete
+            throw new PackageNotFoundException("No se encontró un paquete con el ID proporcionado.");
         }
 
         // Eliminar el paquete de la lista
-
         boolean eliminado = PackagesList.remove(paqueteExistente); // Intenta eliminar el paquete
+
         // Retornar true si se eliminó con éxito, false de lo contrario
         return eliminado;
     }
@@ -165,12 +161,16 @@ public class PackageService implements IPackageService {
 
 
 
+
     ///CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD///
 
-    public List<CulturalPackage> listPackages() {
-        List<CulturalPackage> listaPaquetes = getList(); // Obtén la lista de paquetes
-        return listaPaquetes; // Retorna la lista
+    public List<CulturalPackage> listPackages() throws PackageNotFoundException {
+        if (PackagesList.isEmpty()) {
+            throw new PackageNotFoundException("No hay paquetes disponibles.");
+        }
+        return PackagesList; // Retorna la lista
     }
+
 
 
 }
