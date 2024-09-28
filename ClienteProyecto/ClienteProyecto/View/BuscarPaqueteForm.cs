@@ -1,71 +1,107 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ClienteApp.Model;
+using ClienteApp.Service;
 
 namespace ClienteProyecto.View
 {
     public partial class BuscarPaqueteForm : Form
     {
-        private PaqueteCulturalService _service;
+        private readonly PaqueteCulturalService _service;
+
         public BuscarPaqueteForm()
         {
             InitializeComponent();
             _service = new PaqueteCulturalService();
-            inicializar();
-
+            ConfigurarControles();
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void ConfigurarControles()
+        {
+            cbCriterio.Items.AddRange(new object[] { "Id", "Nombre" });
+            cbCriterio.SelectedIndex = 0;
+            ConfigurarCamposSoloLectura();
         }
 
-        private void inicializar()
+        private void ConfigurarCamposSoloLectura()
         {
-            cbCriterio.Items.Clear();
-            cbCriterio.Items.Add("Id");
-            cbCriterio.Items.Add("Nombre");
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            txtId.ReadOnly = true;
+            txtNombre.ReadOnly = true;
+            txtPrecio.ReadOnly = true;
+            dtFechaInicio.Enabled = false;
+            dtFechaFin.Enabled = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string criterio = cbCriterio.SelectedItem.ToString();
-            string valor = txtValor.Text;
-            PaqueteCultural paquete = null;
+            try
+            {
+                string criterio = cbCriterio.SelectedItem.ToString();
+                string valor = txtValor.Text;
 
-            // Buscar por Id o Nombre
-            if (criterio == "Id")
-            {
-                int id = int.Parse(valor);
-                paquete = _service.BuscarPaquetePorId(id);
-            }
-            else if (criterio == "Nombre")
-            {
-                var paquetes = _service.BuscarPaquetesPorNombre(valor);
-                if (paquetes.Count > 0)
+                if (string.IsNullOrWhiteSpace(valor))
                 {
-                    paquete = paquetes[0]; // Si hay varios, tomar el primero
+                    MessageBox.Show("Por favor, ingrese un valor para buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                PaqueteCultural paquete = null;
+                if (criterio == "Id")
+                {
+                    if (int.TryParse(valor, out int id))
+                    {
+                        paquete = _service.BuscarPaquetePorId(id);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, ingrese un Id válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (criterio == "Nombre")
+                {
+                    var paquetes = _service.BuscarPaquetesPorNombre(valor);
+                    if (paquetes.Count > 0)
+                    {
+                        paquete = paquetes[0];
+                    }
+                }
+
+                if (paquete != null)
+                {
+                    MostrarPaquete(paquete);
+                }
+                else
+                {
+                    MessageBox.Show("Paquete no encontrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
                 }
             }
-
-            if (paquete != null)
+            catch (Exception ex)
             {
-                txtId.Text = paquete.Id.ToString();
-                txtNombre.Text = paquete.Nombre;
-                txtPrecio.Text = paquete.Precio.ToString();
-                dtFechaInicio.Value = paquete.FechaInicio;
-                dtFechaFin.Value = paquete.FechaFin;
-            }
-            else
-            {
-                MessageBox.Show("Paquete no encontrado.");
+                MessageBox.Show($"Error al buscar el paquete: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void MostrarPaquete(PaqueteCultural paquete)
+        {
+            txtId.Text = paquete.Id.ToString();
+            txtNombre.Text = paquete.Nombre;
+            txtPrecio.Text = paquete.Precio.ToString("C2");
+            dtFechaInicio.Value = paquete.FechaInicio;
+            dtFechaFin.Value = paquete.FechaFin;
+        }
+
+        private void LimpiarCampos()
+        {
+            txtId.Clear();
+            txtNombre.Clear();
+            txtPrecio.Clear();
+            dtFechaInicio.Value = DateTime.Now;
+            dtFechaFin.Value = DateTime.Now;
+        }
     }
+
 }
+

@@ -1,91 +1,103 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClienteApp.Model;
+using ClienteApp.Service;
 
 namespace ClienteProyecto.View
 {
     public partial class EliminarPaqueteForm : Form
     {
-        private PaqueteCulturalService _service;
+        private readonly PaqueteCulturalService _service;
 
         public EliminarPaqueteForm()
         {
             InitializeComponent();
             _service = new PaqueteCulturalService();
-            InicializarComboBox();
+            ConfigurarControles();
         }
 
-        private void InicializarComboBox()
+        private void ConfigurarControles()
         {
-            cbCriterio.Items.Clear();
-            cbCriterio.Items.Add("Id");
-            cbCriterio.Items.Add("Nombre");
+            cbCriterio.Items.AddRange(new object[] { "Id", "Nombre" });
+            cbCriterio.SelectedIndex = 0;
+            ConfigurarCamposSoloLectura();
+        }
 
-            if (cbCriterio.Items.Count > 0)
-            {
-                cbCriterio.SelectedIndex = 0;
-            }
+        private void ConfigurarCamposSoloLectura()
+        {
+            txtId.ReadOnly = true;
+            txtNombre.ReadOnly = true;
+            txtPrecio.ReadOnly = true;
+            dtFechaInicio.Enabled = false;
+            dtFechaFin.Enabled = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbCriterio.SelectedItem == null || string.IsNullOrWhiteSpace(txtValor.Text))
+            try
             {
-                MessageBox.Show("Por favor, seleccione un criterio y ingrese un valor para buscar.");
-                return;
-            }
+                string criterio = cbCriterio.SelectedItem.ToString();
+                string valor = txtValor.Text;
 
-            string criterio = cbCriterio.SelectedItem.ToString();
-            string valor = txtValor.Text;
-            PaqueteCultural paquete = null;
-
-            if (criterio == "Id")
-            {
-                if (int.TryParse(valor, out int id))
+                if (string.IsNullOrWhiteSpace(valor))
                 {
-                    paquete = _service.BuscarPaquetePorId(id);
+                    MessageBox.Show("Por favor, ingrese un valor para buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                PaqueteCultural paquete = null;
+
+                if (criterio == "Id")
+                {
+                    // Intenta buscar por ID
+                    if (int.TryParse(valor, out int id))
+                    {
+                        paquete = _service.BuscarPaquetePorId(id);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El valor del ID debe ser numérico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (criterio == "Nombre")
+                {
+                    var paquetes = _service.BuscarPaquetesPorNombre(valor);
+
+                    if (paquetes != null && paquetes.Count > 0)
+                    {
+                        // Si hay más de un resultado, toma el primero o implementa lógica para seleccionar uno
+                        paquete = paquetes.First();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron paquetes con ese nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                        return;
+                    }
+                }
+
+                if (paquete != null)
+                {
+                    // Rellenar los campos del formulario con los datos del paquete encontrado
+                    txtId.Text = paquete.Id.ToString();
+                    txtNombre.Text = paquete.Nombre;
+                    txtPrecio.Text = paquete.Precio.ToString("F2");
+                    dtFechaInicio.Value = paquete.FechaInicio;
+                    dtFechaFin.Value = paquete.FechaFin;
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, ingrese un número válido para el Id.");
-                    return;
+                    MessageBox.Show("No se encontró ningún paquete con ese criterio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
                 }
             }
-            else if (criterio == "Nombre")
+            catch (Exception ex)
             {
-                var paquetes = _service.BuscarPaquetesPorNombre(valor);
-                if (paquetes.Count > 0)
-                {
-                    paquete = paquetes[0];
-                }
+                MessageBox.Show("Ocurrió un error al realizar la búsqueda: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (paquete != null)
-            {
-                MostrarPaquete(paquete);
-                btnEliminar.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("Paquete no encontrado.");
-                LimpiarCampos();
-                btnEliminar.Enabled = false;
-            }
-        }
-
-        private void MostrarPaquete(PaqueteCultural paquete)
-        {
-            txtId.Text = paquete.Id.ToString();
-            txtNombre.Text = paquete.Nombre;
-            txtPrecio.Text = paquete.Precio.ToString("C");
-            dtFechaInicio.Value = paquete.FechaInicio;
-            dtFechaFin.Value = paquete.FechaFin;
         }
 
         private void LimpiarCampos()
@@ -99,28 +111,36 @@ namespace ClienteProyecto.View
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtId.Text, out int id))
+            try
             {
-                DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar este paquete?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
+                if (int.TryParse(txtId.Text, out int id))
                 {
-                    bool eliminado = _service.EliminarPaquete(id);
-                    if (eliminado)
+                    PaqueteCultural paquete = _service.BuscarPaquetePorId(id);
+
+                    if (paquete == null)
                     {
-                        MessageBox.Show("Paquete eliminado con éxito.");
-                        LimpiarCampos();
-                        btnEliminar.Enabled = false;
+                        MessageBox.Show("No se encontró ningún paquete con ese ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
-                    else
+
+                    // Confirmación antes de eliminar
+                    var result = MessageBox.Show($"¿Está seguro de que desea eliminar el paquete '{paquete.Nombre}'?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show("No se pudo eliminar el paquete. Por favor, intente nuevamente.");
+                        _service.EliminarPaquete(id);
+                        MessageBox.Show("Paquete eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("El ID es inválido. Por favor, busque un paquete antes de intentar eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("ID de paquete inválido.");
+                MessageBox.Show("Ocurrió un error al intentar eliminar el paquete: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

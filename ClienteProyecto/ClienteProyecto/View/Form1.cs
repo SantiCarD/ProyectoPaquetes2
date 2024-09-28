@@ -1,13 +1,6 @@
-﻿using ClienteProyecto.View;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using ClienteProyecto.View;
 
 namespace ClienteProyecto
 {
@@ -20,38 +13,75 @@ namespace ClienteProyecto
 
         private void adicionarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdicionarPaqueteForm adicionarForm = new AdicionarPaqueteForm();
-            adicionarForm.Show();
+            try
+            {
+                new AdicionarPaqueteForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de adicionar: {ex.Message}");
+            }
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EliminarPaqueteForm eliminarForm = new EliminarPaqueteForm();
-            eliminarForm.Show();
+            try
+            {
+                new EliminarPaqueteForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de eliminar: {ex.Message}");
+            }
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListarPaquetesForm listarForm = new ListarPaquetesForm();
-            listarForm.Show();
+            try
+            {
+                new ListarPaquetesForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de listar: {ex.Message}");
+            }
         }
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BuscarPaqueteForm buscarForm = new BuscarPaqueteForm();
-            buscarForm.Show();
+            try
+            {
+                new BuscarPaqueteForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de buscar: {ex.Message}");
+            }
         }
 
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ActualizarPaqueteForm actualizarForm = new ActualizarPaqueteForm();
-            actualizarForm.Show();
+            try
+            {
+                new ActualizarPaqueteForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de actualizar: {ex.Message}");
+            }
         }
 
+        // Asegúrate de que tienes un formulario AcercaDe o elimina este método si no lo tienes
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AcercaDe acercaDeForm = new AcercaDe();
-            acercaDeForm.Show();
+            try
+            {
+                new AcercaDe().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de 'Acerca de': {ex.Message}");
+            }
         }
     }
 }

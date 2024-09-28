@@ -1,114 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClienteApp.Model;
 
-public class PaqueteCulturalService
+namespace ClienteApp.Service
 {
-    private List<PaqueteCultural> paquetes;  // Lista para almacenar los paquetes culturales
-
-    // Constructor que inicializa la lista de paquetes
-    public PaqueteCulturalService()
+    public class PaqueteCulturalService
     {
-        paquetes = new List<PaqueteCultural>();
-    }
+        private static List<PaqueteCultural> paquetes = new List<PaqueteCultural>();
 
-    // Adicionar un nuevo Paquete
-    public void AdicionarPaquete(PaqueteCultural paquete)
-    {
-        if (paquete != null)
+        public void AdicionarPaquete(PaqueteCultural paquete)
         {
+            if (paquete == null)
+                throw new ArgumentNullException(nameof(paquete), "El paquete no puede ser nulo.");
+
+            if (paquetes.Any(p => p.Id == paquete.Id))
+                throw new InvalidOperationException($"Ya existe un paquete con el ID {paquete.Id}");
+
             paquetes.Add(paquete);
-            Console.WriteLine("Paquete añadido exitosamente.");
         }
-        else
-        {
-            Console.WriteLine("El paquete es nulo y no puede ser añadido.");
-        }
-    }
 
-    // Eliminar Paquete por Id
-    public bool EliminarPaquete(int id)
-    {
-        var paquete = BuscarPaquetePorId(id);
-        if (paquete != null)
+        public bool EliminarPaquete(int id)
         {
-            paquetes.Remove(paquete);
-            Console.WriteLine($"Paquete con Id {id} eliminado exitosamente.");
-            return true;
-        }
-        else
-        {
-            Console.WriteLine($"Paquete con Id {id} no encontrado.");
+            var paquete = BuscarPaquetePorId(id);
+            if (paquete != null)
+            {
+                return paquetes.Remove(paquete);
+            }
             return false;
         }
-    }
 
-    // Actualizar un Paquete existente
-    public bool ActualizarPaquete(int id, PaqueteCultural paqueteActualizado)
-    {
-        var paqueteExistente = BuscarPaquetePorId(id);
-        if (paqueteExistente != null)
+        public bool ActualizarPaquete(int id, PaqueteCultural paqueteActualizado)
         {
-            paqueteExistente.Nombre = paqueteActualizado.Nombre;
-            paqueteExistente.Precio = paqueteActualizado.Precio;
-            paqueteExistente.FechaInicio = paqueteActualizado.FechaInicio;
-            paqueteExistente.FechaFin = paqueteActualizado.FechaFin;
-            Console.WriteLine($"Paquete con Id {id} actualizado exitosamente.");
-            return true;
-        }
-        else
-        {
-            Console.WriteLine($"Paquete con Id {id} no encontrado.");
+            var paqueteExistente = BuscarPaquetePorId(id);
+            if (paqueteExistente != null)
+            {
+                paqueteExistente.Nombre = paqueteActualizado.Nombre;
+                paqueteExistente.Precio = paqueteActualizado.Precio;
+                paqueteExistente.FechaInicio = paqueteActualizado.FechaInicio;
+                paqueteExistente.FechaFin = paqueteActualizado.FechaFin;
+                return true;
+            }
             return false;
         }
-    }
 
-    // Listar todos los Paquetes
-    public List<PaqueteCultural> ListarPaquetes()
-    {
-        if (paquetes.Count == 0)
+        public List<PaqueteCultural> ListarPaquetes()
         {
-            Console.WriteLine("No hay paquetes culturales disponibles.");
+            return new List<PaqueteCultural>(paquetes);
         }
-        return paquetes;
-    }
 
-    // Buscar Paquete por Id
-    public PaqueteCultural BuscarPaquetePorId(int id)
-    {
-        var paquete = paquetes.Find(p => p.Id == id);
-        if (paquete != null)
+        public PaqueteCultural BuscarPaquetePorId(int id)
         {
-            return paquete;
+            return paquetes.FirstOrDefault(p => p.Id == id);
         }
-        else
-        {
-            Console.WriteLine($"Paquete con Id {id} no encontrado.");
-            return null;
-        }
-    }
 
-    // Buscar Paquetes por Nombre
-    public List<PaqueteCultural> BuscarPaquetesPorNombre(string nombre)
-    {
-        // Convertimos ambos strings a minúsculas para hacer la comparación insensible a mayúsculas
-        var resultado = paquetes.FindAll(p => p.Nombre.ToLower().Contains(nombre.ToLower()));
-        if (resultado.Count == 0)
+        public List<PaqueteCultural> BuscarPaquetesPorNombre(string nombre)
         {
-            Console.WriteLine($"No se encontraron paquetes que coincidan con el nombre '{nombre}'.");
+            return paquetes.Where(p => p.Nombre.ToLower().Contains(nombre.ToLower())).ToList();
         }
-        return resultado;
-    }
-
-
-    // Buscar Paquetes por Rango de Fechas
-    public List<PaqueteCultural> BuscarPaquetesPorRangoFechas(DateTime fechaInicio, DateTime fechaFin)
-    {
-        var resultado = paquetes.FindAll(p => p.FechaInicio >= fechaInicio && p.FechaFin <= fechaFin);
-        if (resultado.Count == 0)
-        {
-            Console.WriteLine($"No se encontraron paquetes en el rango de fechas: {fechaInicio.ToShortDateString()} - {fechaFin.ToShortDateString()}.");
-        }
-        return resultado;
     }
 }

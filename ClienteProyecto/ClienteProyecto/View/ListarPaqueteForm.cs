@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClienteApp.Model;
+using ClienteApp.Service;
 
 namespace ClienteProyecto.View
-{    
+{
     public partial class ListarPaquetesForm : Form
     {
-        private PaqueteCulturalService _service;
+        private readonly PaqueteCulturalService _service;
+
         public ListarPaquetesForm()
         {
             InitializeComponent();
@@ -20,6 +17,7 @@ namespace ClienteProyecto.View
             ConfigurarDataGridView();
             CargarPaquetes();
         }
+
         private void ConfigurarDataGridView()
         {
             dgvPaquetes.AutoGenerateColumns = false;
@@ -42,31 +40,42 @@ namespace ClienteProyecto.View
             {
                 DataPropertyName = "Precio",
                 HeaderText = "Precio",
-                Width = 100
+                Width = 100,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }
             });
 
             dgvPaquetes.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "FechaInicio",
                 HeaderText = "Fecha Inicio",
-                Width = 100
+                Width = 100,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "d" }
             });
 
             dgvPaquetes.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "FechaFin",
                 HeaderText = "Fecha Fin",
-                Width = 100
+                Width = 100,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "d" }
             });
         }
+
         private void CargarPaquetes()
         {
-            var paquetes = _service.ListarPaquetes();
-            dgvPaquetes.DataSource = paquetes;
-
-            if (paquetes.Count == 0)
+            try
             {
-                MessageBox.Show("No hay paquetes culturales disponibles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var paquetes = _service.ListarPaquetes();
+                dgvPaquetes.DataSource = paquetes;
+
+                if (paquetes.Count == 0)
+                {
+                    MessageBox.Show("No hay paquetes culturales disponibles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los paquetes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -76,6 +85,11 @@ namespace ClienteProyecto.View
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarPaquetes();
+        }
+
+        private void FiltrarPaquetes()
         {
             string filtro = txtBuscar.Text.ToLower();
             var paquetes = _service.ListarPaquetes();
@@ -90,6 +104,5 @@ namespace ClienteProyecto.View
 
             dgvPaquetes.DataSource = paquetesFiltrados;
         }
-
     }
 }

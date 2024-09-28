@@ -38,15 +38,15 @@
             // dgvPaquetes
             // 
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPaquetes.Location = new System.Drawing.Point(33, 132);
+            this.dgvPaquetes.Location = new System.Drawing.Point(9, 44);
             this.dgvPaquetes.Name = "dgvPaquetes";
-            this.dgvPaquetes.Size = new System.Drawing.Size(733, 267);
+            this.dgvPaquetes.Size = new System.Drawing.Size(585, 267);
             this.dgvPaquetes.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 90);
+            this.label1.Location = new System.Drawing.Point(217, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(333, 87);
+            this.txtBuscar.Location = new System.Drawing.Point(330, 6);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 2;
@@ -62,9 +62,9 @@
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(358, 415);
+            this.btnRefrescar.Location = new System.Drawing.Point(248, 333);
             this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(75, 23);
+            this.btnRefrescar.Size = new System.Drawing.Size(140, 23);
             this.btnRefrescar.TabIndex = 3;
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(617, 369);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
