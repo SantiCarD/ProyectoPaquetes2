@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using ClienteApp.Model;
 using ClienteApp.Service;
@@ -8,100 +7,64 @@ namespace ClienteProyecto.View
 {
     public partial class BuscarPaqueteForm : Form
     {
-        private readonly PaqueteCulturalService _service;
+        private PaqueteCulturalService _service;
 
         public BuscarPaqueteForm()
         {
             InitializeComponent();
             _service = new PaqueteCulturalService();
-            ConfigurarControles();
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
-        private void ConfigurarControles()
-        {
-            cbCriterio.Items.AddRange(new object[] { "Id", "Nombre" });
-            cbCriterio.SelectedIndex = 0;
-            ConfigurarCamposSoloLectura();
         }
 
-        private void ConfigurarCamposSoloLectura()
-        {
-            txtId.ReadOnly = true;
-            txtNombre.ReadOnly = true;
-            txtPrecio.ReadOnly = true;
-            dtFechaInicio.Enabled = false;
-            dtFechaFin.Enabled = false;
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private async void btnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
                 string criterio = cbCriterio.SelectedItem.ToString();
-                string valor = txtValor.Text;
-
-                if (string.IsNullOrWhiteSpace(valor))
-                {
-                    MessageBox.Show("Por favor, ingrese un valor para buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 PaqueteCultural paquete = null;
-                if (criterio == "Id")
+
+                if (criterio == "Id") // Si el criterio es buscar por Id
                 {
-                    if (int.TryParse(valor, out int id))
+                    if (int.TryParse(cbCriterio.Text, out int id))
                     {
-                        paquete = _service.BuscarPaquetePorId(id);
+                        // Realizamos la búsqueda por Id utilizando el servicio REST
+                        paquete = await _service.BuscarPaquetePorIdAsync(id);
                     }
                     else
                     {
-                        MessageBox.Show("Por favor, ingrese un Id válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Por favor, ingrese un Id válido.");
                         return;
                     }
                 }
-                else if (criterio == "Nombre")
+                else if (criterio == "Nombre") // Si el criterio es buscar por Nombre
                 {
-                    var paquetes = _service.BuscarPaquetesPorNombre(valor);
-                    if (paquetes.Count > 0)
-                    {
-                        paquete = paquetes[0];
-                    }
+                    string nombre = cbCriterio.Text;
+                    // Realizamos la búsqueda por Nombre utilizando el servicio REST
+                    paquete = await _service.BuscarPaquetePorNombreAsync(nombre);
                 }
 
                 if (paquete != null)
                 {
+                    
                     MostrarPaquete(paquete);
                 }
                 else
                 {
-                    MessageBox.Show("Paquete no encontrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    MessageBox.Show("Paquete no encontrado.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al buscar el paquete: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
 
         private void MostrarPaquete(PaqueteCultural paquete)
         {
             txtId.Text = paquete.Id.ToString();
             txtNombre.Text = paquete.Nombre;
-            txtPrecio.Text = paquete.Precio.ToString("C2");
             dtFechaInicio.Value = paquete.FechaInicio;
             dtFechaFin.Value = paquete.FechaFin;
         }
-
-        private void LimpiarCampos()
-        {
-            txtId.Clear();
-            txtNombre.Clear();
-            txtPrecio.Clear();
-            dtFechaInicio.Value = DateTime.Now;
-            dtFechaFin.Value = DateTime.Now;
-        }
     }
-
 }
-

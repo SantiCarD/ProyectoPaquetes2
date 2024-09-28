@@ -7,7 +7,7 @@ namespace ClienteProyecto.View
 {
     public partial class AdicionarPaqueteForm : Form
     {
-        private readonly PaqueteCulturalService _service;
+        private PaqueteCulturalService _service;
 
         public AdicionarPaqueteForm()
         {
@@ -15,58 +15,30 @@ namespace ClienteProyecto.View
             _service = new PaqueteCulturalService();
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private async void btnAdicionar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!ValidarCampos())
-                    return;
+                // Crear el paquete cultural utilizando los valores de los campos
+                PaqueteCultural nuevoPaquete = new PaqueteCultural
+                {
+                    Id = int.Parse(txtId.Text),
+                    Nombre = txtNombre.Text,
+                    Precio = double.Parse(txtPrecio.Text),
+                    FechaInicio = dtFechaInicio.Value,
+                    FechaFin = dtFechaFin.Value
+                };
 
-                int id = int.Parse(txtId.Text);
-                string nombre = txtNombre.Text;
-                double precio = double.Parse(txtPrecio.Text);
-                DateTime fechaInicio = dtFechaInicio.Value;
-                DateTime fechaFin = dtFechaFin.Value;
+                // Llamada al servicio REST para agregar el paquete
+                bool resultado = await _service.AdicionarPaqueteAsync(nuevoPaquete);
 
-                PaqueteCultural nuevoPaquete = new PaqueteCultural(id, nombre, precio, fechaInicio, fechaFin);
-                _service.AdicionarPaquete(nuevoPaquete);
-                MessageBox.Show("Paquete cultural añadido exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCampos();
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Por favor, ingrese valores válidos en los campos.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Mostrar el estado de la operación
+                MessageBox.Show(resultado ? "Paquete añadido con éxito." : "Error al añadir el paquete.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al adicionar el paquete: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}");
             }
-        }
-
-        private bool ValidarCampos()
-        {
-            if (string.IsNullOrWhiteSpace(txtId.Text) || string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text))
-            {
-                MessageBox.Show("Todos los campos son obligatorios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            if (dtFechaInicio.Value >= dtFechaFin.Value)
-            {
-                MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de fin.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            return true;
-        }
-
-        private void LimpiarCampos()
-        {
-            txtId.Clear();
-            txtNombre.Clear();
-            txtPrecio.Clear();
-            dtFechaInicio.Value = DateTime.Now;
-            dtFechaFin.Value = DateTime.Now.AddDays(1);
         }
     }
 }

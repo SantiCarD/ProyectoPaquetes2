@@ -14,46 +14,21 @@ namespace ClienteProyecto.View
         {
             InitializeComponent();
             _service = new PaqueteCulturalService();
-            InicializarComboBox();
-            ConfigurarCampos(false); // Deshabilitar campos de nueva fecha al inicio
         }
 
-        private void InicializarComboBox()
-        {
-            cbCriterio.Items.Clear();
-            cbCriterio.Items.Add("Id");
-            cbCriterio.Items.Add("Nombre");
-            cbCriterio.SelectedIndex = 0; // Seleccionar "Id" por defecto
-        }
-
-        // Método que habilita o deshabilita los campos
-        private void ConfigurarCampos(bool habilitarNuevasFechas)
-        {
-            // Los campos dtFechaInicio y dtFechaFin siempre están deshabilitados
-            dtFechaInicio.Enabled = false;
-            dtFechaFin.Enabled = false;
-
-            // Los campos dtNuevaFechaInicio y dtNuevaFechaFin se habilitan/deshabilitan según el valor de habilitarNuevasFechas
-            dtNuevaFechaInicio.Enabled = habilitarNuevasFechas;
-            dtNuevaFechaFin.Enabled = habilitarNuevasFechas;
-
-            btnActualizar.Enabled = habilitarNuevasFechas; // Habilitar o deshabilitar el botón de actualizar según el estado
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private async void btnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
                 string criterio = cbCriterio.SelectedItem.ToString();
-                string valor = txtBusqueda.Text;
                 PaqueteCultural paquete = null;
 
-                // Buscar por Id o Nombre
-                if (criterio == "Id")
+                if (criterio == "Id") // Si el criterio es buscar por Id
                 {
-                    if (int.TryParse(valor, out int id))
+                    if (int.TryParse(cbCriterio.Text, out int id))
                     {
-                        paquete = _service.BuscarPaquetePorId(id);
+                        // Realizamos la búsqueda por Id utilizando el servicio REST
+                        paquete = await _service.BuscarPaquetePorIdAsync(id);
                     }
                     else
                     {
@@ -61,35 +36,30 @@ namespace ClienteProyecto.View
                         return;
                     }
                 }
-                else if (criterio == "Nombre")
+                else if (criterio == "Nombre") // Si el criterio es buscar por Nombre
                 {
-                    var paquetes = _service.BuscarPaquetesPorNombre(valor);
-                    if (paquetes.Count > 0)
-                    {
-                        paquete = paquetes[0]; // Si hay varios, toma el primero
-                    }
+                    string nombre = cbCriterio.Text;
+                    // Realizamos la búsqueda por Nombre utilizando el servicio REST
+                    paquete = await _service.BuscarPaquetePorNombreAsync(nombre);
                 }
 
                 if (paquete != null)
                 {
                     MostrarPaquete(paquete);
-                    _paqueteActual = paquete;  // Guardar el paquete encontrado
-                    ConfigurarCampos(true);    // Habilitar los campos de nuevas fechas
+                    _paqueteActual = paquete; // Guardar el paquete encontrado
                 }
                 else
                 {
                     MessageBox.Show("Paquete no encontrado.");
-                    LimpiarCampos();
-                    ConfigurarCampos(false); // Deshabilitar los campos si no se encuentra el paquete
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error inesperado: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private async void btnActualizar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -99,40 +69,20 @@ namespace ClienteProyecto.View
                     return;
                 }
 
-                // Validar campos antes de actualizar
-                if (string.IsNullOrWhiteSpace(txtNombre.Text))
-                {
-                    MessageBox.Show("El nombre no puede estar vacío.");
-                    return;
-                }
-
-                if (dtNuevaFechaInicio.Value >= dtNuevaFechaFin.Value)
-                {
-                    MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de fin.");
-                    return;
-                }
-
-                // Actualizar el paquete
+                // Mantiene la lógica de actualización de nombre y fechas
                 _paqueteActual.Nombre = txtNombre.Text;
-                _paqueteActual.FechaInicio = dtNuevaFechaInicio.Value;
-                _paqueteActual.FechaFin = dtNuevaFechaFin.Value;
+                _paqueteActual.FechaInicio = dtFechaInicio.Value;
+                _paqueteActual.FechaFin = dtFechaFin.Value;
 
-                bool actualizado = _service.ActualizarPaquete(_paqueteActual.Id, _paqueteActual);
-                if (actualizado)
-                {
-                    MessageBox.Show("Paquete actualizado con éxito.");
-                    LimpiarCampos();
-                    ConfigurarCampos(false); // Deshabilitar campos después de actualizar
-                    _paqueteActual = null;   // Limpiar la referencia al paquete actual
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo actualizar el paquete.");
-                }
+                // Llamada al servicio REST para actualizar el paquete
+                bool resultado = await _service.ActualizarPaqueteAsync(_paqueteActual.Id, _paqueteActual);
+
+                // Mostrar el estado de la operación
+                MessageBox.Show(resultado ? "Paquete actualizado con éxito." : "Error al actualizar el paquete.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error inesperado: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -141,15 +91,6 @@ namespace ClienteProyecto.View
             txtNombre.Text = paquete.Nombre;
             dtFechaInicio.Value = paquete.FechaInicio;
             dtFechaFin.Value = paquete.FechaFin;
-        }
-
-        private void LimpiarCampos()
-        {
-            txtNombre.Clear();
-            dtFechaInicio.Value = DateTime.Now;
-            dtFechaFin.Value = DateTime.Now;
-            dtNuevaFechaInicio.Value = DateTime.Now;
-            dtNuevaFechaFin.Value = DateTime.Now;
         }
     }
 }

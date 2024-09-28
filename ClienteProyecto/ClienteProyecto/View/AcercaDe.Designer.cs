@@ -40,7 +40,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ClienteProyecto.Properties.Resources.SantiagoFoto;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 104);
+            this.pictureBox1.Location = new System.Drawing.Point(46, 104);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 112);
             this.pictureBox1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ClienteProyecto.Properties.Resources.CamiloFoto;
-            this.pictureBox2.Location = new System.Drawing.Point(344, 104);
+            this.pictureBox2.Location = new System.Drawing.Point(250, 104);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 112);
             this.pictureBox2.TabIndex = 1;
@@ -58,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 249);
+            this.label1.Location = new System.Drawing.Point(49, 249);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 2;
@@ -67,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(356, 249);
+            this.label2.Location = new System.Drawing.Point(277, 249);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 316);
+            this.ClientSize = new System.Drawing.Size(402, 302);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

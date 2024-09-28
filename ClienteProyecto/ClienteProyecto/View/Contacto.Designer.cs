@@ -50,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(232, 260);
+            this.label2.Location = new System.Drawing.Point(197, 260);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 8;
@@ -68,7 +68,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ClienteProyecto.Properties.Resources.pngwing_com__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(209, 115);
+            this.pictureBox2.Location = new System.Drawing.Point(176, 115);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(115, 112);
             this.pictureBox2.TabIndex = 6;
@@ -77,7 +77,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ClienteProyecto.Properties.Resources.pngwing_com__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 115);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 115);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(109, 112);
             this.pictureBox1.TabIndex = 5;
@@ -87,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 308);
+            this.ClientSize = new System.Drawing.Size(307, 293);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
