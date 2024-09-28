@@ -1,0 +1,17 @@
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\bin\Debug\ClienteProyecto.exe.config
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\bin\Debug\ClienteProyecto.exe
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\bin\Debug\ClienteProyecto.pdb
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.csproj.AssemblyReference.cache
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.Properties.Resources.resources
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.View.AdicionarPaqueteForm.resources
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.Form1.resources
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.csproj.GenerateResource.cache
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.csproj.CoreCompileInputs.cache
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.exe
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.pdb
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.View.BuscarPaqueteForm.resources
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.View.EliminarPaqueteForm.resources
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.View.ActualizarPaqueteForm.resources
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.View.ListarPaquetesForm.resources
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.View.AcercaDe.resources
+C:\Users\sulos\source\repos\ClienteProyecto\ClienteProyecto\obj\Debug\ClienteProyecto.View.Contacto.resources
