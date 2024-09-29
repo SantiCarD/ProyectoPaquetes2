@@ -53,7 +53,6 @@
             this.cbCriterio.Name = "cbCriterio";
             this.cbCriterio.Size = new System.Drawing.Size(199, 21);
             this.cbCriterio.TabIndex = 0;
-            this.cbCriterio.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtValor
             // 

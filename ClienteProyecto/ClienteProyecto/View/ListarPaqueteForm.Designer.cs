@@ -58,7 +58,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 2;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnRefrescar
             // 

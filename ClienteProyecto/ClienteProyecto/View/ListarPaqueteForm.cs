@@ -30,5 +30,21 @@ namespace ClienteProyecto.View
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private async void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Llamada al servicio REST para listar todos los paquetes
+                var paquetes = await _service.ListarPaquetesAsync();
+
+                // Actualizar el DataGridView con los paquetes obtenidos
+                dgvPaquetes.DataSource = paquetes;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
     }
 }

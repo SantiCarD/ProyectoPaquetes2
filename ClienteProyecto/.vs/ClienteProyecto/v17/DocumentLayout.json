@@ -1,0 +1,191 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\eliminarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\eliminarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\actualizarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\actualizarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\adicionarpaqueteform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\adicionarpaqueteform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\adicionarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\adicionarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\listarpaqueteform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\listarpaqueteform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\listarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\listarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\listarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\listarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\buscarpaqueteform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\buscarpaqueteform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\sulos\\source\\servidor-cliente_paquetesturisticos\\clienteproyecto\\clienteproyecto\\view\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BuscarPaqueteForm.cs",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\BuscarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\BuscarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\BuscarPaqueteForm.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\BuscarPaqueteForm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T00:08:30.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActualizarPaqueteForm.cs",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\ActualizarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\ActualizarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\ActualizarPaqueteForm.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\ActualizarPaqueteForm.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T00:07:11.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdicionarPaqueteForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\AdicionarPaqueteForm.Designer.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\AdicionarPaqueteForm.Designer.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\AdicionarPaqueteForm.Designer.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\AdicionarPaqueteForm.Designer.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowBkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T00:03:27.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ListarPaqueteForm.cs",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\ListarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\ListarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\ListarPaqueteForm.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\ListarPaqueteForm.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAgwCEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T00:00:47.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BuscarPaqueteForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\BuscarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\BuscarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\BuscarPaqueteForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\BuscarPaqueteForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T23:59:36.084Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EliminarPaqueteForm.cs",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\EliminarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\EliminarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\EliminarPaqueteForm.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\EliminarPaqueteForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T23:56:07.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdicionarPaqueteForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\AdicionarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\AdicionarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\AdicionarPaqueteForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\AdicionarPaqueteForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T00:03:43.288Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ListarPaqueteForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\ListarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\ListarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\ListarPaqueteForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\ListarPaqueteForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T23:58:59.331Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ListarPaqueteForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\ListarPaqueteForm.Designer.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\ListarPaqueteForm.Designer.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\ListarPaqueteForm.Designer.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\ListarPaqueteForm.Designer.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAMwEUAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T23:58:33.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BuscarPaqueteForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\BuscarPaqueteForm.Designer.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\BuscarPaqueteForm.Designer.cs",
+              "ToolTip": "C:\\Users\\sulos\\source\\Servidor-Cliente_PaquetesTuristicos\\ClienteProyecto\\ClienteProyecto\\View\\BuscarPaqueteForm.Designer.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\BuscarPaqueteForm.Designer.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAMwDYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T23:58:04.524Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

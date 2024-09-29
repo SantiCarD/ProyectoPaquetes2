@@ -13,57 +13,112 @@ namespace ClienteProyecto.View
         {
             InitializeComponent();
             _service = new PaqueteCulturalService();
+            LlenarComboCriterio();
+        }
+
+        private void LlenarComboCriterio()
+        {
+            // Limpia el ComboBox para evitar duplicados
+            cbCriterio.Items.Clear();
+
+            // Agrega las opciones "Id" y "Nombre" al ComboBox
+            cbCriterio.Items.Add("Id");
+            cbCriterio.Items.Add("Nombre");
+
+            // Selecciona el primer elemento por defecto
+            cbCriterio.SelectedIndex = 0;
         }
 
         private async void btnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (int.TryParse(txtId.Text, out int id))
-                {
-                    // Llamada al servicio REST para buscar el paquete por Id
-                    PaqueteCultural paquete = await _service.BuscarPaquetePorIdAsync(id);
+                string criterio = cbCriterio.SelectedItem.ToString();
+                PaqueteCultural paquete = null;
 
-                    if (paquete != null)
+                if (criterio == "Id") // Si el criterio es buscar por Id
+                {
+                    if (int.TryParse(cbCriterio.Text, out int id))
                     {
-                        // Mostrar los detalles del paquete en los campos
-                        txtNombre.Text = paquete.Nombre;
-                        txtPrecio.Text = paquete.Precio.ToString();
-                        dtFechaInicio.Value = paquete.FechaInicio;
-                        dtFechaFin.Value = paquete.FechaFin;
-                        btnEliminar.Enabled = true;
+                        // Realizamos la búsqueda por Id utilizando el servicio REST
+                        paquete = await _service.BuscarPaquetePorIdAsync(id);
                     }
                     else
                     {
-                        MessageBox.Show("Paquete no encontrado.");
+                        MessageBox.Show("Por favor, ingrese un Id válido.");
+                        return;
                     }
+                }
+                else if (criterio == "Nombre") // Si el criterio es buscar por Nombre
+                {
+                    string nombre = cbCriterio.Text;
+                    // Realizamos la búsqueda por Nombre utilizando el servicio REST
+                    paquete = await _service.BuscarPaquetePorNombreAsync(nombre);
+                }
+
+                if (paquete != null)
+                {
+
+                    MostrarPaquete(paquete);
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, ingrese un Id válido.");
+                    MessageBox.Show("Paquete no encontrado.");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+
+        private void MostrarPaquete(PaqueteCultural paquete)
+        {
+            txtId.Text = paquete.Id.ToString();
+            txtNombre.Text = paquete.Nombre;
+            dtFechaInicio.Value = paquete.FechaInicio;
+            dtFechaFin.Value = paquete.FechaFin;
         }
 
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (int.TryParse(txtId.Text, out int id))
+                string criterio = cbCriterio.SelectedItem.ToString();
+                PaqueteCultural paquete = null;
+
+                if (criterio == "Id") // Si el criterio es buscar por Id
+                {
+                    if (int.TryParse(cbCriterio.Text, out int id))
+                    {
+                        // Realizamos la búsqueda por Id utilizando el servicio REST
+                        paquete = await _service.BuscarPaquetePorIdAsync(id);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, ingrese un Id válido.");
+                        return;
+                    }
+                }
+                else if (criterio == "Nombre") // Si el criterio es buscar por Nombre
+                {
+                    string nombre = cbCriterio.Text;
+                    // Realizamos la búsqueda por Nombre utilizando el servicio REST
+                    paquete = await _service.BuscarPaquetePorNombreAsync(nombre);
+                }
+
+                if (paquete != null)
                 {
                     // Llamada al servicio REST para eliminar el paquete
-                    bool resultado = await _service.EliminarPaqueteAsync(id);
+                    bool resultado = await _service.EliminarPaqueteAsync(paquete.Id);
 
                     // Mostrar el estado de la operación
                     MessageBox.Show(resultado ? "Paquete eliminado con éxito." : "Error al eliminar el paquete.");
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, ingrese un Id válido.");
+                    MessageBox.Show("Paquete no encontrado.");
                 }
             }
             catch (Exception ex)
@@ -71,5 +126,7 @@ namespace ClienteProyecto.View
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
     }
 }
+

@@ -14,6 +14,20 @@ namespace ClienteProyecto.View
         {
             InitializeComponent();
             _service = new PaqueteCulturalService();
+            LlenarComboCriterio();
+        }
+
+        private void LlenarComboCriterio()
+        {
+            // Limpia el ComboBox para evitar duplicados
+            cbCriterio.Items.Clear();
+
+            // Agrega las opciones "Id" y "Nombre" al ComboBox
+            cbCriterio.Items.Add("Id");
+            cbCriterio.Items.Add("Nombre");
+
+            // Selecciona el primer elemento por defecto
+            cbCriterio.SelectedIndex = 0;
         }
 
         private async void btnBuscar_Click(object sender, EventArgs e)
