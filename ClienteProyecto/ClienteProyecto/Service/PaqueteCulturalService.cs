@@ -1,11 +1,14 @@
 ﻿using ClienteApp.Model;
+using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ClienteApp.Service
 {
@@ -15,86 +18,213 @@ namespace ClienteApp.Service
 
         public PaqueteCulturalService()
         {
-            _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("http://localhost:8080/api/packages/");
+
         }
 
         // Obtener todos los paquetes culturales
-        public async Task<List<PaqueteCultural>> ListarPaquetesAsync()
+        public List<PaqueteCultural> ListarPaquetes()
         {
-            HttpResponseMessage response = await _httpClient.GetAsync("");
+            var options = new RestClientOptions("http://localhost:8080");
+            var client = new RestClient(options);
+            var request = new RestRequest("/api/packages", Method.Get); // Usar el método GET
+
+            // Ejecutar la solicitud
+            var response = client.Execute(request);
+            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
+            // Manejo de la respuesta
             if (response.IsSuccessStatusCode)
             {
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<List<PaqueteCultural>>(jsonResponse);
+                var options2 = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true // Permitir coincidencias sin importar el caso
+                };
+                // Deserializar la respuesta JSON en una lista de paquetes culturales
+                return JsonSerializer.Deserialize<List<PaqueteCultural>>(response.Content, options2);
             }
 
-            return new List<PaqueteCultural>();
+            MessageBox.Show("Error al obtener los paquetes.");
+            return new List<PaqueteCultural>(); // Retornar una lista vacía en caso de error
         }
+
+       
+
+
 
         // Buscar paquete cultural por Id
-        public async Task<PaqueteCultural> BuscarPaquetePorIdAsync(int id)
+        public PaqueteCultural BuscarPaquetePorId(int id)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync(id.ToString());
-            MessageBox.Show(response.StatusCode.ToString());
-
-            if (response.IsSuccessStatusCode)
+            var options = new RestClientOptions("http://localhost:8080");
+            var client = new RestClient(options);
+            var request = new RestRequest($"/api/packages/I/{id}", Method.Get);
+            var response = client.Execute(request);
+            try
             {
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<PaqueteCultural>(jsonResponse);
+                MessageBox.Show(response.StatusCode.ToString());
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var options2 = new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true // Permitir coincidencias sin importar el caso
+                    };
+                    PaqueteCultural paquete = JsonSerializer.Deserialize<PaqueteCultural>(response.Content, options2);
+                    MessageBox.Show(paquete.ToString());
+                    return paquete;
+                }
+                else
+                {
+                    dynamic jsonObj = JsonSerializer.Deserialize<ExpandoObject>(response.Content);
+                    //response.Text = Convert.ToString(jsonObj.message);
+                    MessageBox.Show(Convert.ToString(jsonObj.message));
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show($"Error de red: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}");
             }
 
             return null;
         }
+
+
 
         // Buscar paquete cultural por Nombre
-        public async Task<PaqueteCultural> BuscarPaquetePorNombreAsync(string nombre)
+        public PaqueteCultural BuscarPaquetePorNombre(string nombre)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync($"?nombre={nombre}");
-            MessageBox.Show(response.StatusCode.ToString());
+            var options = new RestClientOptions("http://localhost:8080");
+            var client = new RestClient(options);
+            var request = new RestRequest($"/api/packages/N/{Uri.EscapeDataString(nombre)}", Method.Get);
+            var response = client.Execute(request);
 
-            if (response.IsSuccessStatusCode)
+            try
             {
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<PaqueteCultural>(jsonResponse);
+                MessageBox.Show(response.StatusCode.ToString());
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var options2 = new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true // Permitir coincidencias sin importar el caso
+                    };
+
+                    PaqueteCultural paquete = JsonSerializer.Deserialize<PaqueteCultural>(response.Content, options2);
+                    MessageBox.Show(paquete.ToString());
+                    return paquete;
+                }
+                else
+                {
+                    dynamic jsonObj = JsonSerializer.Deserialize<ExpandoObject>(response.Content);
+                    MessageBox.Show(Convert.ToString(jsonObj.message));
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show($"Error de red: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}");
             }
 
             return null;
         }
 
-        // Adicionar paquete cultural
-        public async Task<bool> AdicionarPaqueteAsync(PaqueteCultural nuevoPaquete)
-        {
-            string jsonContent = JsonSerializer.Serialize(nuevoPaquete);
-            StringContent content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = await _httpClient.PostAsync("", content);
+
+        // Adicionar paquete cultural
+        public bool AdicionarPaquete(int tid, string tnombre, double tprecio, DateTime tfechaInicio, DateTime tfechaFin)
+        {
+            var options = new RestClientOptions("http://localhost:8080");
+            var client = new RestClient(options);
+            var request = new RestRequest("/api/packages", Method.Post);
+            request.AddHeader("Content-Type", "application/json");
+            var fechaISOI = tfechaInicio.ToString("yyyy-MM-ddTHH:mm:ss");
+            var fechaISOF = tfechaFin.ToString("yyyy-MM-ddTHH:mm:ss");
+            request.AddBody(new
+            {
+                id= tid,
+                nombre= tnombre,
+                precio= tprecio,
+                fechaInicio= fechaISOI,
+                fechaFin= fechaISOF
+            });
+
+            var response = client.Execute(request);
+            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
+
+            if (!response.IsSuccessStatusCode)
+            {
+                dynamic jsonObj = JsonSerializer.Deserialize<PaqueteCultural>(response.Content);
+                MessageBox.Show($"Error: {Convert.ToString(jsonObj.message)}"); // Muestra el mensaje de error del servidor
+            }
 
             return response.IsSuccessStatusCode;
         }
+
 
         // Actualizar paquete cultural
-        public async Task<bool> ActualizarPaqueteAsync(int id, PaqueteCultural paqueteActualizado)
+        public bool ActualizarPaquete(int tid, string tnombre, double tprecio, DateTime tfechaInicio, DateTime tfechaFin)
         {
-            string jsonContent = JsonSerializer.Serialize(paqueteActualizado);
-            StringContent content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var options = new RestClientOptions("http://localhost:8080");
+            var client = new RestClient(options);
+            var request = new RestRequest($"/api/packages/P/{tid}", Method.Put);
+            request.AddHeader("Content-Type", "application/json");
 
-            HttpResponseMessage response = await _httpClient.PutAsync(id.ToString(), content);
+            var fechaISOI = tfechaInicio.ToString("yyyy-MM-ddTHH:mm:ss");
+            var fechaISOF = tfechaFin.ToString("yyyy-MM-ddTHH:mm:ss");
+
+            request.AddBody(new
+            {
+                id = tid,
+                nombre = tnombre,
+                precio = tprecio,
+                fechaInicio = fechaISOI,
+                fechaFin = fechaISOF
+            });
+
+            var response = client.Execute(request);
+            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
+
+            if (!response.IsSuccessStatusCode)
+            {
+                dynamic jsonObj = JsonSerializer.Deserialize<ExpandoObject>(response.Content);
+                MessageBox.Show($"Error: {Convert.ToString(jsonObj.message)}"); // Muestra el mensaje de error del servidor
+            }
 
             return response.IsSuccessStatusCode;
         }
+
+
 
         // Eliminar paquete cultural
-        public async Task<bool> EliminarPaqueteAsync(int id)
+        public bool EliminarPaquete(int id)
         {
-            HttpResponseMessage response = await _httpClient.DeleteAsync(id.ToString());
+            var options = new RestClientOptions("http://localhost:8080");
+            var client = new RestClient(options);
+            var request = new RestRequest($"/api/packages/{id}", Method.Delete); // Usar el método DELETE
+
+            // Ejecutar la solicitud
+            var response = client.Execute(request);
+            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
-            return response.IsSuccessStatusCode;
+            // Manejo de errores
+            if (!response.IsSuccessStatusCode)
+            {
+                dynamic jsonObj = JsonSerializer.Deserialize<ExpandoObject>(response.Content);
+                MessageBox.Show($"Error: {Convert.ToString(jsonObj.message)}"); // Muestra el mensaje de error del servidor
+            }
+
+            return response.IsSuccessStatusCode; // Retorna el resultado de la operación
         }
+
     }
 }

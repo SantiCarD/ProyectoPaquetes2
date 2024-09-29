@@ -1,7 +1,17 @@
 ﻿using System;
+using System.Dynamic;
+using System.Net;
+using System.Text.Json;
 using System.Windows.Forms;
 using ClienteApp.Model;
 using ClienteApp.Service;
+using RestSharp; // Para trabajar con RestSharp
+using System; // Para tipos básicos como int, string, etc.
+using System.Net; // Para el manejo de códigos de estado HTTP
+using System.Text.Json; // Para la deserialización de JSON
+using System.Windows.Forms;
+using System.Net.Http; // Para usar los formularios y MessageBox
+
 
 namespace ClienteProyecto.View
 {
@@ -19,26 +29,44 @@ namespace ClienteProyecto.View
         {
             try
             {
-                // Crear el paquete cultural utilizando los valores de los campos
-                PaqueteCultural nuevoPaquete = new PaqueteCultural
+                // Validaciones
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
                 {
-                    Id = int.Parse(txtId.Text),
-                    Nombre = txtNombre.Text,
-                    Precio = double.Parse(txtPrecio.Text),
-                    FechaInicio = dtFechaInicio.Value,
-                    FechaFin = dtFechaFin.Value
-                };
+                    MessageBox.Show("El nombre no puede estar vacío.");
+                    return;
+                }
 
-                // Llamada al servicio REST para agregar el paquete
-                bool resultado = await _service.AdicionarPaqueteAsync(nuevoPaquete);
+                if (!double.TryParse(txtPrecio.Text, out double precio) || precio <= 0)
+                {
+                    MessageBox.Show("El precio debe ser un número mayor que 0.");
+                    return;
+                }
 
-                // Mostrar el estado de la operación
-                MessageBox.Show(resultado ? "Paquete añadido con éxito." : "Error al añadir el paquete.");
+                DateTime fechaInicio = dtFechaInicio.Value;
+                DateTime fechaFin = dtFechaFin.Value;
+
+                if (fechaInicio > fechaFin)
+                {
+                    MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de fin.");
+                    return;
+                }
+
+
+                _service.AdicionarPaquete(int.Parse(txtId.Text), txtNombre.Text, double.Parse(txtPrecio.Text), fechaInicio, fechaFin);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Error de formato: " + ex.Message);
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("Error de conexión: " + ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Errorr: {ex.Message}");
             }
         }
+
     }
 }

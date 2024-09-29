@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class PackageService implements IPackageService {
     private static PackageService packageService;
-    private ArrayList<CulturalPackage> PackagesList = new ArrayList<CulturalPackage>();
+    private List<CulturalPackage> PackagesList = new ArrayList<CulturalPackage>();
 
     private PackageService() {
 
@@ -24,56 +24,43 @@ public class PackageService implements IPackageService {
         return packageService;
     }
 
-    public ArrayList<CulturalPackage> getList() {
+    public List<CulturalPackage> getList() {
         return PackagesList;
     }
 
 
+
     ///CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD///
-    public CulturalPackage searchPackage(String param, String value) {
-        CulturalPackage foundPackage = null;
-        switch (param) {
-
-            case "Id": {
-                for (CulturalPackage culturalPackage : getList()) {
-                    if (String.valueOf(culturalPackage.getId()).equals(value)) {
-                        foundPackage = culturalPackage;
-                        break;
-                    }
-                }
-                break;
+    // Buscar paquete cultural por ID
+    public CulturalPackage searchPackageById(int id) {
+        for (CulturalPackage culturalPackage : getList()) {
+            if (culturalPackage.getId() == id) {
+                return culturalPackage; // Retorna el paquete si se encuentra
             }
-
-
-            case "Nombre": {
-                for (CulturalPackage culturalPackage : getList()) {
-                    if (culturalPackage.getNombre().equalsIgnoreCase(value)) {
-                        foundPackage = culturalPackage;
-                        break; //
-                    }
-                }
-                break;
-            }
-
-
-            default:
-                System.out.println("Parámetro no reconocido.");
-                break;
         }
+        return null; // Retorna null si no se encuentra
+    }
 
-        return foundPackage;
+    // Buscar paquete cultural por nombre
+    public CulturalPackage searchPackageByName(String nombre) {
+        for (CulturalPackage culturalPackage : getList()) {
+            if (culturalPackage.getNombre().equalsIgnoreCase(nombre)) {
+                return culturalPackage; // Retorna el paquete si se encuentra
+            }
+        }
+        return null; // Retorna null si no se encuentra
     }
 
 
 
     public CulturalPackage createPackage(String nombre, int id, Double precio, LocalDateTime fechaInicio, LocalDateTime fechaFin) throws DuplicatedIdException, DuplicatedNameException, InvalidDateRangeException {
         // Verificar si ya existe un paquete con el mismo ID
-        if (searchPackage("Id", String.valueOf(id)) != null) {
+        if (searchPackageById(id) != null) {
             throw new DuplicatedIdException("Ya existe un paquete con este ID.");
         }
 
         // Verificar si ya existe un paquete con el mismo nombre
-        if (searchPackage("Nombre", nombre) != null) {
+        if (searchPackageByName(nombre) != null) {
             throw new DuplicatedNameException("Ya existe un paquete con este nombre.");
         }
 
@@ -103,7 +90,7 @@ public class PackageService implements IPackageService {
 
     public CulturalPackage updatePackage(int id, String nuevoNombre, Double nuevoPrecio, LocalDateTime nuevaFechaInicio, LocalDateTime nuevaFechaFin) throws PackageNotFoundException, InvalidDateRangeException {
         // Buscar el paquete existente por ID
-        CulturalPackage paqueteExistente = searchPackage("Id", String.valueOf(id));
+        CulturalPackage paqueteExistente = searchPackageById(id);
 
         // Verificar si el paquete existe
         if (paqueteExistente == null) {
@@ -143,7 +130,7 @@ public class PackageService implements IPackageService {
 
     public boolean deletePackage(int id) throws PackageNotFoundException {
         // Buscar el paquete existente por ID
-        CulturalPackage paqueteExistente = searchPackage("Id", String.valueOf(id));
+        CulturalPackage paqueteExistente = searchPackageById(id);
 
         // Verificar si el paquete existe
         if (paqueteExistente == null) {

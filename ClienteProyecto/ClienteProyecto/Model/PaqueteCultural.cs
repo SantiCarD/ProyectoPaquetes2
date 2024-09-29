@@ -4,26 +4,26 @@ namespace ClienteApp.Model
 {
     public class PaqueteCultural
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public double Precio { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public double precio { get; set; }
+        public DateTime fechaInicio { get; set; }
+        public DateTime fechaFin { get; set; }
 
         public PaqueteCultural() { }
 
         public PaqueteCultural(int id, string nombre, double precio, DateTime fechaInicio, DateTime fechaFin)
         {
-            Id = id;
-            Nombre = nombre;
-            Precio = precio;
-            FechaInicio = fechaInicio;
-            FechaFin = fechaFin;
+            this.id = id;
+            this.nombre = nombre;
+            this.precio = precio;
+            this.fechaInicio = fechaInicio;
+            this.fechaFin = fechaFin;
         }
 
         public override string ToString()
         {
-            return $"ID: {Id}, Nombre: {Nombre}, Precio: {Precio:C2}, Inicio: {FechaInicio:d}, Fin: {FechaFin:d}";
+            return $"ID: {id}, Nombre: {nombre}, Precio: {precio:C2}, Inicio: {fechaInicio:d}, Fin: {fechaFin:d}";
         }
     }
 }

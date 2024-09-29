@@ -35,14 +35,24 @@ public class PackageController {
     // Obtener todos los paquetes
     @GetMapping
     public ResponseEntity<List<CulturalPackage>> getAllPackages() {
-        List<CulturalPackage> packages = packageService.listPackages();
+        List<CulturalPackage> packages = packageService.getList();
         return ResponseEntity.ok(packages); // 200 OK
     }
 
     // Obtener paquete por ID
-    @GetMapping("/{id}")
+    @GetMapping("/I/{id}")
     public ResponseEntity<CulturalPackage> getPackageById(@PathVariable int id) {
-        CulturalPackage culturalPackage = packageService.searchPackage("Id", String.valueOf(id));
+        CulturalPackage culturalPackage = packageService.searchPackageById(id);
+        if (culturalPackage != null) {
+            return ResponseEntity.ok(culturalPackage); // 200 OK
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null); // 404 Not Found
+        }
+    }
+
+    @GetMapping("/N/{nombre}")
+    public ResponseEntity<CulturalPackage> getPackageByName(@PathVariable String nombre) {
+        CulturalPackage culturalPackage = packageService.searchPackageByName(nombre);
         if (culturalPackage != null) {
             return ResponseEntity.ok(culturalPackage); // 200 OK
         } else {
@@ -51,7 +61,7 @@ public class PackageController {
     }
 
     // Crear paquete cultural
-    @PostMapping
+    @PostMapping("")
     public ResponseEntity<?> createPackage(@RequestBody CulturalPackage packageDto) {
         try {
             CulturalPackage createdPackage = packageService.createPackage(
@@ -78,7 +88,7 @@ public class PackageController {
     }
 
     // Actualizar paquete cultural
-    @PutMapping("/{id}")
+    @PutMapping("/P/{id}")
     public ResponseEntity<?> updatePackage(
             @PathVariable int id,
             @RequestBody CulturalPackage packageDto) {

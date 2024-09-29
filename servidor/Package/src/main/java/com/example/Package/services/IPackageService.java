@@ -7,10 +7,11 @@ import java.util.List;
 
 public interface IPackageService {
 
-    CulturalPackage searchPackage(String param, String value);
+    CulturalPackage searchPackageByName(String nombre);
+    CulturalPackage searchPackageById(int id);
     CulturalPackage createPackage(String nombre, int id, Double precio, LocalDateTime fechaInicio, LocalDateTime fechaFin);
     CulturalPackage updatePackage(int id, String nuevoNombre, Double nuevoPrecio, LocalDateTime nuevaFechaInicio, LocalDateTime nuevaFechaFin);
     boolean deletePackage(int id);
-    List<CulturalPackage> listPackages();
+    List<CulturalPackage> getList();
 
 }

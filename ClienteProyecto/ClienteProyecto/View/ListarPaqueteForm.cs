@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClienteApp.Model;
 using ClienteApp.Service;
@@ -15,30 +17,30 @@ namespace ClienteProyecto.View
             _service = new PaqueteCulturalService();
         }
 
-        private async void ListarPaquetesForm_Load(object sender, EventArgs e)
+        private void ListarPaquetesForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                // Llamada al servicio REST para listar todos los paquetes
-                var paquetes = await _service.ListarPaquetesAsync();
+            FiltrarPaquetes(txtFilter.Text); // Cargar paquetes al inicio
+        }
 
-                // Mostrar los paquetes en el DataGridView (suponiendo que tienes uno llamado dgvPaquetes)
-                dgvPaquetes.DataSource = paquetes;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
+        private void btnFiltrar_Click(object sender, EventArgs e) // Cambia el nombre según tu botón
+        {
+            string filterText = txtFilter.Text.Trim(); // Obtener texto del filtro
+            FiltrarPaquetes(filterText); // Filtrar paquetes
         }
 
         private async void btnRefrescar_Click(object sender, EventArgs e)
         {
+             CargarPaquetes(); // Refrescar paquetes
+        }
+
+        private void CargarPaquetes()
+        {
             try
             {
                 // Llamada al servicio REST para listar todos los paquetes
-                var paquetes = await _service.ListarPaquetesAsync();
+                var paquetes =  _service.ListarPaquetes(); // Asegúrate de que el método sea async
 
-                // Actualizar el DataGridView con los paquetes obtenidos
+                // Mostrar los paquetes en el DataGridView
                 dgvPaquetes.DataSource = paquetes;
             }
             catch (Exception ex)
@@ -46,5 +48,29 @@ namespace ClienteProyecto.View
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+        public void FiltrarPaquetes(string filterText)
+        {
+            List<PaqueteCultural> paquetesFiltrados = new List<PaqueteCultural>();
+            try
+            {
+                // Llamada al servicio para filtrar los paquetes
+                foreach (PaqueteCultural paq in _service.ListarPaquetes())
+                {
+                    if (paq.nombre.Contains(filterText))
+                    {
+                        paquetesFiltrados.Add(paq);
+                    }
+                }
+                dgvPaquetes.DataSource = paquetesFiltrados;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+
     }
 }

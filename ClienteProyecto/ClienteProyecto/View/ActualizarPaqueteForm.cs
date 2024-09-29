@@ -39,10 +39,11 @@ namespace ClienteProyecto.View
 
                 if (criterio == "Id") // Si el criterio es buscar por Id
                 {
-                    if (int.TryParse(cbCriterio.Text, out int id))
+                    int resultado;
+                    if (int.TryParse(txtBusqueda.Text, out resultado))
                     {
                         // Realizamos la búsqueda por Id utilizando el servicio REST
-                        paquete = await _service.BuscarPaquetePorIdAsync(id);
+                        paquete = _service.BuscarPaquetePorId(resultado);
                     }
                     else
                     {
@@ -52,9 +53,9 @@ namespace ClienteProyecto.View
                 }
                 else if (criterio == "Nombre") // Si el criterio es buscar por Nombre
                 {
-                    string nombre = cbCriterio.Text;
+                    string nombre = txtBusqueda .Text;
                     // Realizamos la búsqueda por Nombre utilizando el servicio REST
-                    paquete = await _service.BuscarPaquetePorNombreAsync(nombre);
+                    paquete = _service.BuscarPaquetePorNombre(nombre);
                 }
 
                 if (paquete != null)
@@ -83,13 +84,9 @@ namespace ClienteProyecto.View
                     return;
                 }
 
-                // Mantiene la lógica de actualización de nombre y fechas
-                _paqueteActual.Nombre = txtNombre.Text;
-                _paqueteActual.FechaInicio = dtFechaInicio.Value;
-                _paqueteActual.FechaFin = dtFechaFin.Value;
 
                 // Llamada al servicio REST para actualizar el paquete
-                bool resultado = await _service.ActualizarPaqueteAsync(_paqueteActual.Id, _paqueteActual);
+                bool resultado =  _service.ActualizarPaquete(int.Parse(textBox1.Text), textBox5.Text, double.Parse(textBox3.Text), dtNuevaFechaInicio.Value, dtNuevaFechaFin.Value);
 
                 // Mostrar el estado de la operación
                 MessageBox.Show(resultado ? "Paquete actualizado con éxito." : "Error al actualizar el paquete.");
@@ -102,9 +99,16 @@ namespace ClienteProyecto.View
 
         private void MostrarPaquete(PaqueteCultural paquete)
         {
-            txtNombre.Text = paquete.Nombre;
-            dtFechaInicio.Value = paquete.FechaInicio;
-            dtFechaFin.Value = paquete.FechaFin;
+            txtNombre.Text = paquete.nombre;
+            textBox1.Text = paquete.id.ToString();
+            textBox2.Text = paquete.precio.ToString();
+            textBox6.Text = paquete.fechaInicio.ToShortDateString();
+            textBox7.Text = paquete.fechaFin.ToShortDateString();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

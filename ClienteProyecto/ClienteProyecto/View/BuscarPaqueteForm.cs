@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using ClienteApp.Model;
 using ClienteApp.Service;
 
@@ -38,10 +39,11 @@ namespace ClienteProyecto.View
 
                 if (criterio == "Id") // Si el criterio es buscar por Id
                 {
-                    if (int.TryParse(cbCriterio.Text, out int id))
+                    int resultado;
+                    if (int.TryParse(txtValor.Text, out resultado))
                     {
                         // Realizamos la búsqueda por Id utilizando el servicio REST
-                        paquete = await _service.BuscarPaquetePorIdAsync(id);
+                        paquete = _service.BuscarPaquetePorId(resultado);
                     }
                     else
                     {
@@ -51,9 +53,9 @@ namespace ClienteProyecto.View
                 }
                 else if (criterio == "Nombre") // Si el criterio es buscar por Nombre
                 {
-                    string nombre = cbCriterio.Text;
+                    string nombre = txtValor.Text;
                     // Realizamos la búsqueda por Nombre utilizando el servicio REST
-                    paquete = await _service.BuscarPaquetePorNombreAsync(nombre);
+                    paquete = _service.BuscarPaquetePorNombre(nombre);
                 }
 
                 if (paquete != null)
@@ -75,10 +77,12 @@ namespace ClienteProyecto.View
 
         private void MostrarPaquete(PaqueteCultural paquete)
         {
-            txtId.Text = paquete.Id.ToString();
-            txtNombre.Text = paquete.Nombre;
-            dtFechaInicio.Value = paquete.FechaInicio;
-            dtFechaFin.Value = paquete.FechaFin;
+            txtId.Text = paquete.id.ToString();
+            txtNombre.Text = paquete.nombre;
+            txtPrecio.Text = paquete.precio.ToString();
+            textFechaI.Text = paquete.fechaInicio.ToShortDateString();
+            textFechaF.Text = paquete.fechaFin.ToShortDateString();
         }
+
     }
 }
