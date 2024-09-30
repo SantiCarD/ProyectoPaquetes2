@@ -83,5 +83,17 @@ namespace ClienteProyecto
                 MessageBox.Show($"Error al abrir la ventana de 'Acerca de': {ex.Message}");
             }
         }
+
+        private void contactoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new Contacto().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de 'Acerca de': {ex.Message}");
+            }
+        }
     }
 }

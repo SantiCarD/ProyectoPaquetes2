@@ -1,4 +1,6 @@
-﻿namespace ClienteProyecto.View
+﻿using System.Drawing;
+
+namespace ClienteProyecto.View
 {
     partial class AcercaDe
     {
@@ -33,8 +35,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -77,11 +81,22 @@
             // 
             this.panel1.AccessibleName = "";
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel1.Location = new System.Drawing.Point(2, -2);
+            this.panel1.Controls.Add(this.title);
+            this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 85);
+            this.panel1.Size = new System.Drawing.Size(406, 85);
             this.panel1.TabIndex = 4;
             this.panel1.Tag = "";
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Segoe Print", 24F);
+            this.title.Location = new System.Drawing.Point(70, 11);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(272, 56);
+            this.title.TabIndex = 0;
+            this.title.Text = "Desarrolladores";
             // 
             // AcercaDe
             // 
@@ -97,6 +112,8 @@
             this.Text = "AcercaDe";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +126,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label title;
     }
 }

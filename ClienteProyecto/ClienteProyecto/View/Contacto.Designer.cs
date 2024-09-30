@@ -1,4 +1,6 @@
-﻿namespace ClienteProyecto.View
+﻿using System.Drawing;
+
+namespace ClienteProyecto.View
 {
     partial class Contacto
     {
@@ -29,10 +31,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.title = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -41,11 +45,22 @@
             // 
             this.panel1.AccessibleName = "";
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.title);
             this.panel1.Location = new System.Drawing.Point(-8, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 89);
             this.panel1.TabIndex = 9;
             this.panel1.Tag = "";
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Segoe Print", 24F);
+            this.title.Location = new System.Drawing.Point(82, 20);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(168, 56);
+            this.title.TabIndex = 0;
+            this.title.Text = "Contacto";
             // 
             // label2
             // 
@@ -95,6 +110,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Contacto";
             this.Text = "Contacto";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -109,5 +126,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label title;
     }
 }
