@@ -1,66 +1,64 @@
 package com.example.Package.controlers;
 
-import com.example.Package.exceptions.*;
-import com.example.Package.models.CulturalPackage;
-import com.example.Package.services.IPackageService;
+import com.example.Package.exceptions.DuplicatedIdException;
+import com.example.Package.exceptions.DuplicatedNameException;
+import com.example.Package.exceptions.InvalidDateRangeException;
+import com.example.Package.models.Guide;
+import com.example.Package.services.IGuideService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/packages")
-public class PackageController {
-
-    private final IPackageService packageService;
-
+@RequestMapping("/api/guides")
+public class GuideController {
+    private final IGuideService guideService;
     @Autowired
-    public PackageController(IPackageService packageService) {
-        this.packageService = packageService;
+    public GuideController(IGuideService guideService) {
+        this.guideService = guideService;
     }
 
-    // Health check
     @GetMapping("/health")
     public ResponseEntity<Map<String, String>> healthCheck() {
         Map<String, String> status = new HashMap<>();
         status.put("status", "UP");
-        status.put("message", "El servidor de paquetes culturales está funcionando correctamente");
+        status.put("message", "El servidor de guias está funcionando correctamente");
         return ResponseEntity.ok(status); // 200 OK
     }
 
     // Obtener todos los paquetes
     @GetMapping("/get/{filter}")
-    public ResponseEntity<List<CulturalPackage>> getAllPackages(@PathVariable String filter) {
-        List<CulturalPackage> packages = packageService.listPackages(filter);
+    public ResponseEntity<List<Guide>> getAllPackages(@PathVariable String filter) {
+        List<Guide> packages = guideService.listGuides(filter);
         return ResponseEntity.ok(packages); // 200 OK
     }
 
     @GetMapping("/get/")
-    public ResponseEntity<List<CulturalPackage>> getAllPackages() {
-        List<CulturalPackage> packages = packageService.getList();
+    public ResponseEntity<List<Guide>> getAllPackages() {
+        List<Guide> packages = guideService.getList();
         return ResponseEntity.ok(packages); // 200 OK
     }
-
     // Obtener paquete por ID
     @GetMapping("/getById/{id}")
-    public ResponseEntity<CulturalPackage> getPackageById(@PathVariable int id) {
-        CulturalPackage culturalPackage = packageService.searchPackageById(id);
-        if (culturalPackage != null) {
-            return ResponseEntity.ok(culturalPackage); // 200 OK
+    public ResponseEntity<Guide> getPackageById(@PathVariable int id) {
+        Guide guide = guideService.searchGuideById(id);
+        if (guide != null) {
+            return ResponseEntity.ok(guide); // 200 OK
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null); // 404 Not Found
         }
     }
 
     @GetMapping("/getByName/{nombre}")
-    public ResponseEntity<CulturalPackage> getPackageByName(@PathVariable String nombre) {
-        CulturalPackage culturalPackage = packageService.searchPackageByName(nombre);
-        if (culturalPackage != null) {
-            return ResponseEntity.ok(culturalPackage); // 200 OK
+    public ResponseEntity<Guide> getPackageByName(@PathVariable String nombre) {
+        Guide guide = guideService.searchGuideByName(nombre);
+        if (guide != null) {
+            return ResponseEntity.ok(guide); // 200 OK
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null); // 404 Not Found
         }
@@ -68,16 +66,16 @@ public class PackageController {
 
     // Crear paquete cultural
     @PostMapping("/create")
-    public ResponseEntity<?> createPackage(@RequestBody CulturalPackage packageDto) {
+    public ResponseEntity<?> createPackage(@RequestBody Guide guidee) {
         try {
-            CulturalPackage createdPackage = packageService.createPackage(
-                    packageDto.getNombre(),
-                    packageDto.getId(),
-                    packageDto.getPrecio(),
-                    packageDto.getFechaInicio(),
-                    packageDto.getFechaFin()
+            Guide guide = guideService.createGuide(
+                    guidee.getId(),
+                    guidee.getNombre(),
+                    guidee.getCalificacion(),
+                    guidee.getEdad(),
+                    guidee.getFechaNacimiento()
             );
-            return ResponseEntity.status(HttpStatus.CREATED).body(createdPackage); // 201 Created
+            return ResponseEntity.status(HttpStatus.CREATED).body(guide); // 201 Created
 
         } catch (DuplicatedIdException e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage()); // 409 Conflict
@@ -97,19 +95,19 @@ public class PackageController {
     @PutMapping("/put/{id}")
     public ResponseEntity<?> updatePackage(
             @PathVariable int id,
-            @RequestBody CulturalPackage packageDto) {
+            @RequestBody Guide guide) {
         try {
-            CulturalPackage updatedPackage = packageService.updatePackage(
+            Guide guide1 = guideService.updateGuide(
                     id,
-                    packageDto.getNombre(),
-                    packageDto.getPrecio(),
-                    packageDto.getFechaInicio(),
-                    packageDto.getFechaFin()
+                    guide.getNombre(),
+                    guide.getCalificacion(),
+                    guide.getEdad(),
+                    guide.getFechaNacimiento()
             );
-            if (updatedPackage != null) {
-                return ResponseEntity.ok(updatedPackage); // 200 OK
+            if (guide1 != null) {
+                return ResponseEntity.ok(guide1); // 200 OK
             } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paquete no encontrado"); // 404 Not Found
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Guia no encontrado"); // 404 Not Found
             }
 
         } catch (DuplicatedNameException e) {
@@ -123,14 +121,14 @@ public class PackageController {
         }
     }
 
-    // Eliminar paquete cultural
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deletePackage(@PathVariable int id) {
-        boolean deleted = packageService.deletePackage(id);
+        boolean deleted = guideService.deleteGuide(id);
         if (deleted) {
             return ResponseEntity.noContent().build(); // 204 No Content
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paquete no encontrado"); // 404 Not Found
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Guia no encontrado"); // 404 Not Found
         }
     }
+
 }

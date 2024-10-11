@@ -151,14 +151,27 @@ public class PackageService implements IPackageService {
 
     ///CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD//////CRUD///
 
-    public List<CulturalPackage> listPackages() throws PackageNotFoundException {
+    public List<CulturalPackage> listPackages(String filter) throws PackageNotFoundException {
+        List<CulturalPackage> filtrados = new ArrayList<>();
         if (PackagesList.isEmpty()) {
             throw new PackageNotFoundException("No hay paquetes disponibles.");
         }
-        return PackagesList; // Retorna la lista
+
+        if(filter.isEmpty() || filter.isBlank())
+        {
+            filtrados = PackagesList;
+        }
+
+        else{
+            for (CulturalPackage culturalPackage : PackagesList) {
+                if(culturalPackage.getNombre().contains(filter))
+                {
+                    filtrados.add(culturalPackage);
+                }
+            }
+        }
+        return filtrados;
     }
-
-
 
 }
 

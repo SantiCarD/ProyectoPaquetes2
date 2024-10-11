@@ -1,6 +1,7 @@
 package com.example.Package.models;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class CulturalPackage {
 
@@ -9,6 +10,8 @@ public class CulturalPackage {
     private Double precio;
     private LocalDateTime fechaInicio;
     private LocalDateTime fechaFin;
+
+    private ArrayList<Guide> guias;
 
     public CulturalPackage(String nombre, int id, Double precio, LocalDateTime fechaInicio, LocalDateTime fechaFin) {
         Nombre = nombre;
@@ -56,5 +59,13 @@ public class CulturalPackage {
 
     public void setFechaFin(LocalDateTime fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    public ArrayList<Guide> getGuias() {
+        return guias;
+    }
+
+    public void setGuias(ArrayList<Guide> guias) {
+        this.guias = guias;
     }
 }

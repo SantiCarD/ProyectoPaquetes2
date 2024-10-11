@@ -12,6 +12,7 @@ public interface IPackageService {
     CulturalPackage createPackage(String nombre, int id, Double precio, LocalDateTime fechaInicio, LocalDateTime fechaFin);
     CulturalPackage updatePackage(int id, String nuevoNombre, Double nuevoPrecio, LocalDateTime nuevaFechaInicio, LocalDateTime nuevaFechaFin);
     boolean deletePackage(int id);
+    List<CulturalPackage> listPackages(String filter);
     List<CulturalPackage> getList();
 
 }
