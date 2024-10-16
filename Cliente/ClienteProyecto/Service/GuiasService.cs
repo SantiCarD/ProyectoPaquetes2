@@ -1,34 +1,34 @@
 ﻿using ClienteApp.Model;
+using ClienteApp.Service;
 using ClienteProyecto.Model;
 using RestSharp;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace ClienteApp.Service
+namespace ClienteProyecto.Service
 {
-    public class PaqueteCulturalService
+    public class GuiasService
     {
         private readonly HttpClient _httpClient;
 
-        public PaqueteCulturalService()
+        public GuiasService()
         {
 
         }
 
         // Obtener todos los paquetes culturales
-        public List<PaqueteCultural> ListarPaquetes()
+        public List<Guia> ListarGuias()
         {
             var options = new RestClientOptions("http://localhost:8080");
             var client = new RestClient(options);
-            var request = new RestRequest("/api/packages/get/", Method.Get); // Usar el método GET
+            var request = new RestRequest("/api/guides/get/", Method.Get); // Usar el método GET
 
             // Ejecutar la solicitud
             var response = client.Execute(request);
@@ -43,23 +43,23 @@ namespace ClienteApp.Service
                     PropertyNameCaseInsensitive = true // Permitir coincidencias sin importar el caso
                 };
                 // Deserializar la respuesta JSON en una lista de paquetes culturales
-                return JsonSerializer.Deserialize<List<PaqueteCultural>>(response.Content, options2);
+                return JsonSerializer.Deserialize<List<Guia>>(response.Content, options2);
             }
 
             MessageBox.Show("Error al obtener los paquetes.");
-            return new List<PaqueteCultural>(); // Retornar una lista vacía en caso de error
+            return new List<Guia>(); // Retornar una lista vacía en caso de error
         }
 
-       
+
 
 
 
         // Buscar paquete cultural por Id
-        public PaqueteCultural BuscarPaquetePorId(int id)
+        public Guia BuscarGuiaPorId(int id)
         {
             var options = new RestClientOptions("http://localhost:8080");
             var client = new RestClient(options);
-            var request = new RestRequest($"/api/packages/getById/{id}", Method.Get);
+            var request = new RestRequest($"/api/guides/getById/{id}", Method.Get);
             var response = client.Execute(request);
             try
             {
@@ -71,9 +71,9 @@ namespace ClienteApp.Service
                     {
                         PropertyNameCaseInsensitive = true // Permitir coincidencias sin importar el caso
                     };
-                    PaqueteCultural paquete = JsonSerializer.Deserialize<PaqueteCultural>(response.Content, options2);
-                    MessageBox.Show(paquete.ToString());
-                    return paquete;
+                    Guia guia = JsonSerializer.Deserialize<Guia>(response.Content, options2);
+                    MessageBox.Show(guia.ToString());
+                    return guia;
                 }
                 else
                 {
@@ -97,11 +97,11 @@ namespace ClienteApp.Service
 
 
         // Buscar paquete cultural por Nombre
-        public PaqueteCultural BuscarPaquetePorNombre(string nombre)
+        public Guia BuscarGuiaPorNombre(string nombre)
         {
             var options = new RestClientOptions("http://localhost:8080");
             var client = new RestClient(options);
-            var request = new RestRequest($"/api/packages/getByName/{Uri.EscapeDataString(nombre)}", Method.Get);
+            var request = new RestRequest($"/api/guides/getByName/{Uri.EscapeDataString(nombre)}", Method.Get);
             var response = client.Execute(request);
 
             try
@@ -115,9 +115,9 @@ namespace ClienteApp.Service
                         PropertyNameCaseInsensitive = true // Permitir coincidencias sin importar el caso
                     };
 
-                    PaqueteCultural paquete = JsonSerializer.Deserialize<PaqueteCultural>(response.Content, options2);
-                    MessageBox.Show(paquete.ToString());
-                    return paquete;
+                    Guia guia = JsonSerializer.Deserialize<Guia>(response.Content, options2);
+                    MessageBox.Show(guia.ToString());
+                    return guia;
                 }
                 else
                 {
@@ -140,22 +140,20 @@ namespace ClienteApp.Service
 
 
         // Adicionar paquete cultural
-        public bool AdicionarPaquete(int tid, string tnombre, double tprecio, DateTime tfechaInicio, DateTime tfechaFin, ArrayList Idguias)
+        public bool AdicionarGuia(int tid, string tnombre, double tcalificacion, int tedad, DateTime tfechaNacimiento)
         {
             var options = new RestClientOptions("http://localhost:8080");
             var client = new RestClient(options);
-            var request = new RestRequest("/api/packages/create", Method.Post);
+            var request = new RestRequest("/api/guides/create", Method.Post);
             request.AddHeader("Content-Type", "application/json");
-            var fechaISOI = tfechaInicio.ToString("yyyy-MM-ddTHH:mm:ss");
-            var fechaISOF = tfechaFin.ToString("yyyy-MM-ddTHH:mm:ss");
+            var fechaISOF = tfechaNacimiento.ToString("yyyy-MM-ddTHH:mm:ss");
             request.AddBody(new
             {
-                id= tid,
-                nombre= tnombre,
-                precio= tprecio,
-                fechaInicio= fechaISOI,
-                fechaFin= fechaISOF,
-                guias= Idguias
+                id = tid,
+                nombre = tnombre,
+                calificacion = tcalificacion,
+                edad = tedad,
+                fechaNacimiento = fechaISOF
             });
 
             var response = client.Execute(request);
@@ -164,7 +162,7 @@ namespace ClienteApp.Service
 
             if (!response.IsSuccessStatusCode)
             {
-                dynamic jsonObj = JsonSerializer.Deserialize<PaqueteCultural>(response.Content);
+                dynamic jsonObj = JsonSerializer.Deserialize<Guia>(response.Content);
                 MessageBox.Show($"Error: {Convert.ToString(jsonObj.message)}"); // Muestra el mensaje de error del servidor
             }
 
@@ -173,23 +171,22 @@ namespace ClienteApp.Service
 
 
         // Actualizar paquete cultural
-        public bool ActualizarPaquete(int tid, string tnombre, double tprecio, DateTime tfechaInicio, DateTime tfechaFin)
+        public bool ActualizarGuia(int tid, string tnombre, double tcalificacion, int tedad, DateTime tfechaNacimiento)
         {
             var options = new RestClientOptions("http://localhost:8080");
             var client = new RestClient(options);
-            var request = new RestRequest($"/api/packages/put/{tid}", Method.Put);
+            var request = new RestRequest($"/api/guides/put/{tid}", Method.Put);
             request.AddHeader("Content-Type", "application/json");
 
-            var fechaISOI = tfechaInicio.ToString("yyyy-MM-ddTHH:mm:ss");
-            var fechaISOF = tfechaFin.ToString("yyyy-MM-ddTHH:mm:ss");
+            var fechaISOF = tfechaNacimiento.ToString("yyyy-MM-ddTHH:mm:ss");
 
             request.AddBody(new
             {
                 id = tid,
                 nombre = tnombre,
-                precio = tprecio,
-                fechaInicio = fechaISOI,
-                fechaFin = fechaISOF
+                calificacion = tcalificacion,
+                edad = tedad,
+                fechaNacimiento = fechaISOF
             });
 
             var response = client.Execute(request);
@@ -208,11 +205,11 @@ namespace ClienteApp.Service
 
 
         // Eliminar paquete cultural
-        public bool EliminarPaquete(int id)
+        public bool EliminarGuia(int id)
         {
             var options = new RestClientOptions("http://localhost:8080");
             var client = new RestClient(options);
-            var request = new RestRequest($"/api/packages/delete/{id}", Method.Delete); // Usar el método DELETE
+            var request = new RestRequest($"/api/guides/delete/{id}", Method.Delete); // Usar el método DELETE
 
             // Ejecutar la solicitud
             var response = client.Execute(request);
@@ -231,3 +228,4 @@ namespace ClienteApp.Service
 
     }
 }
+

@@ -78,28 +78,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Guia.cs" />
+    <Compile Include="Service\GuiasService.cs" />
     <Compile Include="View\AcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ActualizarPaqueteForm.cs">
+    <Compile Include="View\Guia\BuscarGuiaForm1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ActualizarPaqueteForm.Designer.cs">
+    <Compile Include="View\Guia\BuscarGuiaForm1.Designer.cs">
+      <DependentUpon>BuscarGuiaForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Paquete\ActualizarPaqueteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Paquete\ActualizarPaqueteForm.Designer.cs">
       <DependentUpon>ActualizarPaqueteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AdicionarPaqueteForm.cs">
+    <Compile Include="View\Paquete\AdicionarPaqueteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AdicionarPaqueteForm.Designer.cs">
+    <Compile Include="View\Paquete\AdicionarPaqueteForm.Designer.cs">
       <DependentUpon>AdicionarPaqueteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\BuscarPaqueteForm.cs">
+    <Compile Include="View\Paquete\BuscarPaqueteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\BuscarPaqueteForm.Designer.cs">
+    <Compile Include="View\Paquete\BuscarPaqueteForm.Designer.cs">
       <DependentUpon>BuscarPaqueteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Contacto.cs">
@@ -108,26 +116,26 @@
     <Compile Include="View\Contacto.Designer.cs">
       <DependentUpon>Contacto.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\EliminarPaqueteForm.cs">
+    <Compile Include="View\Paquete\EliminarPaqueteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\EliminarPaqueteForm.Designer.cs">
+    <Compile Include="View\Paquete\EliminarPaqueteForm.Designer.cs">
       <DependentUpon>EliminarPaqueteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form1.cs">
+    <Compile Include="View\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\PaqueteCultural.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\PaqueteCulturalService.cs" />
-    <Compile Include="View\ListarPaqueteForm.cs">
+    <Compile Include="View\Paquete\ListarPaqueteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ListarPaqueteForm.Designer.cs">
+    <Compile Include="View\Paquete\ListarPaqueteForm.Designer.cs">
       <DependentUpon>ListarPaqueteForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -143,25 +151,28 @@
     <EmbeddedResource Include="View\AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ActualizarPaqueteForm.resx">
+    <EmbeddedResource Include="View\Guia\BuscarGuiaForm1.resx">
+      <DependentUpon>BuscarGuiaForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Paquete\ActualizarPaqueteForm.resx">
       <DependentUpon>ActualizarPaqueteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AdicionarPaqueteForm.resx">
+    <EmbeddedResource Include="View\Paquete\AdicionarPaqueteForm.resx">
       <DependentUpon>AdicionarPaqueteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\BuscarPaqueteForm.resx">
+    <EmbeddedResource Include="View\Paquete\BuscarPaqueteForm.resx">
       <DependentUpon>BuscarPaqueteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Contacto.resx">
       <DependentUpon>Contacto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\EliminarPaqueteForm.resx">
+    <EmbeddedResource Include="View\Paquete\EliminarPaqueteForm.resx">
       <DependentUpon>EliminarPaqueteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ListarPaqueteForm.resx">
+    <EmbeddedResource Include="View\Paquete\ListarPaqueteForm.resx">
       <DependentUpon>ListarPaqueteForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

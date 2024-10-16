@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClienteProyecto.Model;
+using System;
+using System.Collections.Generic;
 
 namespace ClienteApp.Model
 {
@@ -9,6 +11,7 @@ namespace ClienteApp.Model
         public double precio { get; set; }
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
+        public List<Guia> guias { get; set; }
 
         public PaqueteCultural() { }
 
