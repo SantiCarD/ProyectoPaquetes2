@@ -32,7 +32,6 @@ namespace ClienteApp.Service
 
             // Ejecutar la solicitud
             var response = client.Execute(request);
-            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
             // Manejo de la respuesta
@@ -72,14 +71,12 @@ namespace ClienteApp.Service
                         PropertyNameCaseInsensitive = true // Permitir coincidencias sin importar el caso
                     };
                     PaqueteCultural paquete = JsonSerializer.Deserialize<PaqueteCultural>(response.Content, options2);
-                    MessageBox.Show(paquete.ToString());
                     return paquete;
                 }
                 else
                 {
                     dynamic jsonObj = JsonSerializer.Deserialize<ExpandoObject>(response.Content);
                     //response.Text = Convert.ToString(jsonObj.message);
-                    MessageBox.Show(Convert.ToString(jsonObj.message));
                 }
             }
             catch (HttpRequestException ex)
@@ -116,7 +113,6 @@ namespace ClienteApp.Service
                     };
 
                     PaqueteCultural paquete = JsonSerializer.Deserialize<PaqueteCultural>(response.Content, options2);
-                    MessageBox.Show(paquete.ToString());
                     return paquete;
                 }
                 else
@@ -159,7 +155,6 @@ namespace ClienteApp.Service
             });
 
             var response = client.Execute(request);
-            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
             if (!response.IsSuccessStatusCode)
@@ -194,7 +189,6 @@ namespace ClienteApp.Service
             });
 
             var response = client.Execute(request);
-            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
             if (!response.IsSuccessStatusCode)
@@ -217,7 +211,6 @@ namespace ClienteApp.Service
 
             // Ejecutar la solicitud
             var response = client.Execute(request);
-            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
             // Manejo de errores

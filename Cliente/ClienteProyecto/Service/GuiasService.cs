@@ -32,7 +32,6 @@ namespace ClienteProyecto.Service
 
             // Ejecutar la solicitud
             var response = client.Execute(request);
-            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
             // Manejo de la respuesta
@@ -72,7 +71,6 @@ namespace ClienteProyecto.Service
                         PropertyNameCaseInsensitive = true // Permitir coincidencias sin importar el caso
                     };
                     Guia guia = JsonSerializer.Deserialize<Guia>(response.Content, options2);
-                    MessageBox.Show(guia.ToString());
                     return guia;
                 }
                 else
@@ -116,7 +114,6 @@ namespace ClienteProyecto.Service
                     };
 
                     Guia guia = JsonSerializer.Deserialize<Guia>(response.Content, options2);
-                    MessageBox.Show(guia.ToString());
                     return guia;
                 }
                 else
@@ -157,7 +154,6 @@ namespace ClienteProyecto.Service
             });
 
             var response = client.Execute(request);
-            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
             if (!response.IsSuccessStatusCode)
@@ -190,7 +186,6 @@ namespace ClienteProyecto.Service
             });
 
             var response = client.Execute(request);
-            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
             if (!response.IsSuccessStatusCode)
@@ -213,7 +208,6 @@ namespace ClienteProyecto.Service
 
             // Ejecutar la solicitud
             var response = client.Execute(request);
-            MessageBox.Show(response.Content);
             MessageBox.Show(response.StatusCode.ToString());
 
             // Manejo de errores

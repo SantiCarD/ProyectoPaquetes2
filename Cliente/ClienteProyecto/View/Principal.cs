@@ -145,5 +145,17 @@ namespace ClienteProyecto
                 MessageBox.Show($"Error al abrir la ventana de 'Buscar Guia': {ex.Message}");
             }
         }
+
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new ListarGuiaForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de 'Buscar Guia': {ex.Message}");
+            }
+        }
     }
 }

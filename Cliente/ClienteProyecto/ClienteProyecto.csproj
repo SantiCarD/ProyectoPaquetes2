@@ -110,6 +110,12 @@
     <Compile Include="View\Guiass\ActualizarGuiaForm.Designer.cs">
       <DependentUpon>ActualizarGuiaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Guiass\ListarGuiaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Guiass\ListarGuiaForm.Designer.cs">
+      <DependentUpon>ListarGuiaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Paquete\ActualizarPaqueteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Guiass\EliminarGuiaForm.resx">
       <DependentUpon>EliminarGuiaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Guiass\ListarGuiaForm.resx">
+      <DependentUpon>ListarGuiaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Paquete\ActualizarPaqueteForm.resx">
       <DependentUpon>ActualizarPaqueteForm.cs</DependentUpon>

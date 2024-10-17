@@ -42,8 +42,9 @@
             this.adicionarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.actualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -137,7 +138,8 @@
             this.adicionarToolStripMenuItem1,
             this.buscarToolStripMenuItem1,
             this.eliminarToolStripMenuItem1,
-            this.actualizarToolStripMenuItem1});
+            this.actualizarToolStripMenuItem1,
+            this.listarToolStripMenuItem1});
             this.guiaToolStripMenuItem.Name = "guiaToolStripMenuItem";
             this.guiaToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.guiaToolStripMenuItem.Text = "Guia";
@@ -163,6 +165,13 @@
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
+            // actualizarToolStripMenuItem1
+            // 
+            this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
+            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.actualizarToolStripMenuItem1.Text = "Actualizar";
+            this.actualizarToolStripMenuItem1.Click += new System.EventHandler(this.actualizarToolStripMenuItem1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ClienteProyecto.Properties.Resources.LogoTurismo;
@@ -173,12 +182,12 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // actualizarToolStripMenuItem1
+            // listarToolStripMenuItem1
             // 
-            this.actualizarToolStripMenuItem1.Name = "actualizarToolStripMenuItem1";
-            this.actualizarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.actualizarToolStripMenuItem1.Text = "Actualizar";
-            this.actualizarToolStripMenuItem1.Click += new System.EventHandler(this.actualizarToolStripMenuItem1_Click);
+            this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.listarToolStripMenuItem1.Text = "Listar";
+            this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
             // 
             // Principal
             // 
@@ -217,6 +226,7 @@
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
     }
 }
 

@@ -169,3 +169,4 @@ C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\Clie
 C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.View.g.AdicionarGuiaForm.resources
 C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.View.Guiass.EliminarGuiaForm.resources
 C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.View.Guiass.ActualizarGuiaForm.resources
+C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.View.Guiass.ListarGuiaForm.resources
