@@ -86,11 +86,29 @@
     <Compile Include="View\AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Guia\BuscarGuiaForm1.cs">
+    <Compile Include="View\Guiass\BuscarGuiaForm1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Guia\BuscarGuiaForm1.Designer.cs">
+    <Compile Include="View\Guiass\BuscarGuiaForm1.Designer.cs">
       <DependentUpon>BuscarGuiaForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Guiass\AdicionarGuiaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Guiass\AdicionarGuiaForm.Designer.cs">
+      <DependentUpon>AdicionarGuiaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Guiass\EliminarGuiaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Guiass\EliminarGuiaForm.Designer.cs">
+      <DependentUpon>EliminarGuiaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Guiass\ActualizarGuiaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Guiass\ActualizarGuiaForm.Designer.cs">
+      <DependentUpon>ActualizarGuiaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Paquete\ActualizarPaqueteForm.cs">
       <SubType>Form</SubType>
@@ -151,8 +169,17 @@
     <EmbeddedResource Include="View\AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Guia\BuscarGuiaForm1.resx">
+    <EmbeddedResource Include="View\Guiass\ActualizarGuiaForm.resx">
+      <DependentUpon>ActualizarGuiaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Guiass\AdicionarGuiaForm.resx">
+      <DependentUpon>AdicionarGuiaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Guiass\BuscarGuiaForm1.resx">
       <DependentUpon>BuscarGuiaForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Guiass\EliminarGuiaForm.resx">
+      <DependentUpon>EliminarGuiaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Paquete\ActualizarPaqueteForm.resx">
       <DependentUpon>ActualizarPaqueteForm.cs</DependentUpon>

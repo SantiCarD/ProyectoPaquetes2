@@ -1,6 +1,6 @@
-﻿namespace ClienteProyecto.View
+﻿namespace ClienteProyecto.View.Guiass
 {
-    partial class BuscarGuiaForm1
+    partial class EliminarGuiaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -46,24 +46,28 @@
             this.cbCriterio = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.txtValor);
             this.panel2.Controls.Add(this.cbCriterio);
-            this.panel2.Location = new System.Drawing.Point(-1, 94);
+            this.panel2.Location = new System.Drawing.Point(-1, 85);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(754, 426);
-            this.panel2.TabIndex = 20;
+            this.panel2.Size = new System.Drawing.Size(701, 454);
+            this.panel2.TabIndex = 22;
             // 
             // panel3
             // 
@@ -78,7 +82,7 @@
             this.panel3.Controls.Add(this.txtPrecio);
             this.panel3.Controls.Add(this.txtNombre);
             this.panel3.Controls.Add(this.txtId);
-            this.panel3.Location = new System.Drawing.Point(121, 79);
+            this.panel3.Location = new System.Drawing.Point(85, 46);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(445, 318);
@@ -177,7 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 11);
+            this.label1.Location = new System.Drawing.Point(31, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 16);
@@ -186,7 +190,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(525, 11);
+            this.btnBuscar.Location = new System.Drawing.Point(496, 10);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
@@ -197,7 +201,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(335, 15);
+            this.txtValor.Location = new System.Drawing.Point(306, 14);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(183, 22);
@@ -207,7 +211,7 @@
             // 
             this.cbCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCriterio.FormattingEnabled = true;
-            this.cbCriterio.Location = new System.Drawing.Point(179, 11);
+            this.cbCriterio.Location = new System.Drawing.Point(150, 10);
             this.cbCriterio.Margin = new System.Windows.Forms.Padding(4);
             this.cbCriterio.Name = "cbCriterio";
             this.cbCriterio.Size = new System.Drawing.Size(148, 24);
@@ -215,40 +219,63 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(153)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.title);
-            this.panel1.Location = new System.Drawing.Point(-1, -2);
+            this.panel1.Location = new System.Drawing.Point(-88, -1);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(755, 98);
-            this.panel1.TabIndex = 19;
+            this.panel1.Size = new System.Drawing.Size(788, 88);
+            this.panel1.TabIndex = 21;
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe Print", 24F);
-            this.title.Location = new System.Drawing.Point(203, 11);
+            this.title.Location = new System.Drawing.Point(265, 10);
             this.title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(286, 70);
+            this.title.Size = new System.Drawing.Size(309, 70);
             this.title.TabIndex = 0;
-            this.title.Text = "Buscar Guias";
+            this.title.Text = "Eliminar Guia";
             // 
-            // BuscarGuiaForm1
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.panel4.Controls.Add(this.btnEliminar);
+            this.panel4.Location = new System.Drawing.Point(0, 390);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(625, 64);
+            this.panel4.TabIndex = 23;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(267, 22);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // EliminarGuiaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 518);
+            this.ClientSize = new System.Drawing.Size(624, 538);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "BuscarGuiaForm1";
+            this.Name = "EliminarGuiaForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.EliminarGuiaForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -273,5 +300,7 @@
         private System.Windows.Forms.ComboBox cbCriterio;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

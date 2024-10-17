@@ -173,7 +173,7 @@ namespace ClienteApp.Service
 
 
         // Actualizar paquete cultural
-        public bool ActualizarPaquete(int tid, string tnombre, double tprecio, DateTime tfechaInicio, DateTime tfechaFin)
+        public bool ActualizarPaquete(int tid, string tnombre, double tprecio, DateTime tfechaInicio, DateTime tfechaFin, ArrayList Idguias)
         {
             var options = new RestClientOptions("http://localhost:8080");
             var client = new RestClient(options);
@@ -189,7 +189,8 @@ namespace ClienteApp.Service
                 nombre = tnombre,
                 precio = tprecio,
                 fechaInicio = fechaISOI,
-                fechaFin = fechaISOF
+                fechaFin = fechaISOF,
+                guias = Idguias
             });
 
             var response = client.Execute(request);

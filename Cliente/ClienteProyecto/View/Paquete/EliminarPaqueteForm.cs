@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using ClienteApp.Model;
 using ClienteApp.Service;
@@ -79,8 +80,28 @@ namespace ClienteProyecto.View
             txtId.Text = paquete.id.ToString();
             txtNombre.Text = paquete.nombre;
             txtPrecio.Text = paquete.precio.ToString();
-            dtFechaInicio.Value = paquete.fechaInicio;
-            dtFechaFin.Value = paquete.fechaFin;
+            textFechaI.Text = paquete.fechaInicio.ToShortDateString();
+            textFechaF.Text = paquete.fechaFin.ToShortDateString();
+
+            if (paquete.guias.Count() == 0)
+            {
+                textBox1.Text = "No hay guias";
+            }
+            else
+            {
+                textBox1.Text = string.Join(", ", paquete.guias);
+            }
+
+        }
+
+        private void clear()
+        {
+            txtId.Text = "";
+            txtNombre.Text = "";
+            txtPrecio.Text = "";
+            textFechaI.Text = "";
+            textFechaF.Text = "";
+            textBox1.Text = "";
         }
 
         private async void btnEliminar_Click(object sender, EventArgs e)
@@ -92,6 +113,7 @@ namespace ClienteProyecto.View
                 {
                     bool resultado = _service.EliminarPaquete(paquete.id);
                     MessageBox.Show(resultado ? "Paquete eliminado con éxito." : "Error al actualizar el paquete.");
+                    clear();
                 }
                 else
                 {

@@ -11,7 +11,7 @@ namespace ClienteApp.Model
         public double precio { get; set; }
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
-        public List<Guia> guias { get; set; }
+        public List<Guia> guias { get; set; } = new List<Guia>();
 
         public PaqueteCultural() { }
 

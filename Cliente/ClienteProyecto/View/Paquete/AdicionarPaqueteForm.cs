@@ -14,7 +14,8 @@ using System.Net.Http;
 using ClienteProyecto.Model;
 using ClienteProyecto.Service;
 using System.Collections.Generic;
-using System.Collections; // Para usar los formularios y MessageBox
+using System.Collections;
+using System.Linq; // Para usar los formularios y MessageBox
 
 
 namespace ClienteProyecto.View
@@ -62,6 +63,7 @@ namespace ClienteProyecto.View
 
 
                 _service.AdicionarPaquete(int.Parse(txtId.Text), txtNombre.Text, double.Parse(txtPrecio.Text), fechaInicio, fechaFin, Idguias);
+                clear();
             }
             catch (FormatException ex)
             {
@@ -74,23 +76,38 @@ namespace ClienteProyecto.View
             catch (Exception ex)
             {
                 MessageBox.Show($"Errorr: {ex.Message}");
+                Idguias = new ArrayList();
+                textBox1.Text = "";
             }
         }
-
+        private void clear()
+        {
+            txtId.Text = "";
+            txtNombre.Text = "";
+            textBox1.Text = "";
+            txtPrecio.Text = "";
+            Idguias = new ArrayList();
+        }
+        
         private void LlenarComboCriterio()
         {
             comboBox1.Items.Clear();
 
-
-            foreach(Guia guia in _guiasService.ListarGuias())
+            if (_guiasService.ListarGuias().Count() == 0)
             {
-                comboBox1.Items.Add(guia.nombre);
+                comboBox1.Items.Add("No hay guias");
+                button1.Enabled = false;
             }
-
-
+            else
+            {
+                foreach (Guia guia in _guiasService.ListarGuias())
+                {
+                    comboBox1.Items.Add(guia.nombre);
+                }
+                
+            }
             comboBox1.SelectedIndex = 0;
-            
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -104,6 +121,16 @@ namespace ClienteProyecto.View
             }
             textBox1.Text = string.Join(", ", Nguias);
             ;
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -129,6 +129,7 @@ public class GuideService implements IGuideService{
         // Eliminar el paquete de la lista
         boolean eliminado = guides.remove(guide); // Intenta eliminar el paquete
 
+
         // Retornar true si se eliminó con éxito, false de lo contrario
         return eliminado;
     }

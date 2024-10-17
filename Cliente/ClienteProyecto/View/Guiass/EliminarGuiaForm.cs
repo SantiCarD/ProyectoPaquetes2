@@ -1,4 +1,4 @@
-﻿
+﻿using ClienteApp.Model;
 using ClienteProyecto.Model;
 using ClienteProyecto.Service;
 using System;
@@ -11,18 +11,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ClienteProyecto.View
+namespace ClienteProyecto.View.Guiass
 {
-    public partial class BuscarGuiaForm1 : Form
+    public partial class EliminarGuiaForm : Form
     {
         private GuiasService _service;
-        public BuscarGuiaForm1()
+        public EliminarGuiaForm()
         {
             InitializeComponent();
             _service = new GuiasService();
             LlenarComboCriterio();
         }
 
+        private void EliminarGuiaForm_Load(object sender, EventArgs e)
+        {
+
+        }
         private void LlenarComboCriterio()
         {
             // Limpia el ComboBox para evitar duplicados
@@ -35,7 +39,6 @@ namespace ClienteProyecto.View
             // Selecciona el primer elemento por defecto
             cbCriterio.SelectedIndex = 0;
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -87,5 +90,36 @@ namespace ClienteProyecto.View
             textFechaI.Text = guia.edad.ToString();
             textFechaF.Text = guia.fechaNacimiento.ToShortDateString();
         }
+        private void clear()
+        {
+            txtId.Text = "";
+            txtNombre.Text = "";
+            txtPrecio.Text = "";
+            textFechaI.Text = "";
+            textFechaF.Text = "";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Guia paquete = _service.BuscarGuiaPorNombre(txtNombre.Text);
+                if (paquete != null)
+                {
+                    bool resultado = _service.EliminarGuia(paquete.id);
+                    MessageBox.Show(resultado ? "Paquete eliminado con éxito." : "Error al actualizar el paquete.");
+                    clear();
+                }
+                else
+                {
+                    MessageBox.Show("Paquete no encontrado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+        }
     }
-}
+ }

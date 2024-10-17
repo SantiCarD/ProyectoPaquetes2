@@ -3,13 +3,17 @@ package com.example.Package.controlers;
 import com.example.Package.exceptions.DuplicatedIdException;
 import com.example.Package.exceptions.DuplicatedNameException;
 import com.example.Package.exceptions.InvalidDateRangeException;
+import com.example.Package.models.CulturalPackage;
 import com.example.Package.models.Guide;
+import com.example.Package.services.GuideService;
 import com.example.Package.services.IGuideService;
+import com.example.Package.services.PackageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +22,8 @@ import java.util.Map;
 @RequestMapping("/api/guides")
 public class GuideController {
     private final IGuideService guideService;
+    @Autowired
+    private PackageService servicio;
     @Autowired
     public GuideController(IGuideService guideService) {
         this.guideService = guideService;
@@ -123,8 +129,19 @@ public class GuideController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deletePackage(@PathVariable int id) {
+        Guide guia = guideService.searchGuideById(id);
         boolean deleted = guideService.deleteGuide(id);
         if (deleted) {
+            for(CulturalPackage cp : servicio.getList())
+                {
+                    if(cp.guideExist(id))
+                    {
+                        ArrayList<Guide> guiaspc = cp.getGuias();
+                        guiaspc.remove(guia);
+                        System.out.println(guiaspc.toString());
+                        cp.setGuias(guiaspc);
+                    }
+                }
             return ResponseEntity.noContent().build(); // 204 No Content
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Guia no encontrado"); // 404 Not Found

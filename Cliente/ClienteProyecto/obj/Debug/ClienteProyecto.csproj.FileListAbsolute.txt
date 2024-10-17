@@ -166,3 +166,6 @@ C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\Clie
 C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteP.E68CA155.Up2Date
 C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.exe
 C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.pdb
+C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.View.g.AdicionarGuiaForm.resources
+C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.View.Guiass.EliminarGuiaForm.resources
+C:\Users\Personal\Desktop\Universidad\Git\Servidor-Cliente_Paquetes\Cliente\ClienteProyecto\obj\Debug\ClienteProyecto.View.Guiass.ActualizarGuiaForm.resources

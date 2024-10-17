@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using ClienteProyecto.View;
+using ClienteProyecto.View.g;
+using ClienteProyecto.View.Guiass;
 
 namespace ClienteProyecto
 {
@@ -101,6 +103,42 @@ namespace ClienteProyecto
             try
             {
                 new BuscarGuiaForm1().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de 'Buscar Guia': {ex.Message}");
+            }
+        }
+
+        private void adicionarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new AdicionarGuiaForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de 'Buscar Guia': {ex.Message}");
+            }
+        }
+
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new EliminarGuiaForm().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir la ventana de 'Buscar Guia': {ex.Message}");
+            }
+        }
+
+        private void actualizarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new ActualizarGuiaForm().Show();
             }
             catch (Exception ex)
             {

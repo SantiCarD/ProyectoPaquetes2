@@ -122,14 +122,16 @@ namespace ClienteProyecto.View
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(355, 22);
             this.txtId.TabIndex = 6;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(155, 66);
+            this.txtNombre.Location = new System.Drawing.Point(155, 67);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(355, 22);
             this.txtNombre.TabIndex = 7;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtPrecio
             // 

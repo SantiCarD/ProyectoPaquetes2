@@ -1,22 +1,25 @@
-﻿using System;
-using System.Linq;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using ClienteApp.Model;
-
-using ClienteApp.Service;
+﻿
 using ClienteProyecto.Model;
+using ClienteProyecto.Service;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ClienteProyecto.View
 {
-    public partial class BuscarPaqueteCulturalForm : Form
+    public partial class BuscarGuiaForm1 : Form
     {
-        private PaqueteCulturalService _service;
-
-        public BuscarPaqueteCulturalForm()
+        private GuiasService _service;
+        public BuscarGuiaForm1()
         {
             InitializeComponent();
-            _service = new PaqueteCulturalService();
+            _service = new GuiasService();
             LlenarComboCriterio();
         }
 
@@ -38,7 +41,7 @@ namespace ClienteProyecto.View
             try
             {
                 string criterio = cbCriterio.SelectedItem.ToString();
-                PaqueteCultural paquete = null;
+                Guia guia = null;
 
                 if (criterio == "Id") // Si el criterio es buscar por Id
                 {
@@ -46,7 +49,7 @@ namespace ClienteProyecto.View
                     if (int.TryParse(txtValor.Text, out resultado))
                     {
                         // Realizamos la búsqueda por Id utilizando el servicio REST
-                        paquete = _service.BuscarPaquetePorId(resultado);
+                        guia = _service.BuscarGuiaPorId(resultado);
                     }
                     else
                     {
@@ -58,13 +61,13 @@ namespace ClienteProyecto.View
                 {
                     string nombre = txtValor.Text;
                     // Realizamos la búsqueda por Nombre utilizando el servicio REST
-                    paquete = _service.BuscarPaquetePorNombre(nombre);
+                    guia = _service.BuscarGuiaPorNombre(nombre);
                 }
 
-                if (paquete != null)
+                if (guia != null)
                 {
-                    
-                    MostrarPaquete(paquete);
+
+                    MostrarGuia(guia);
                 }
                 else
                 {
@@ -76,36 +79,16 @@ namespace ClienteProyecto.View
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
-
-
-        private void MostrarPaquete(PaqueteCultural paquete)
+        private void MostrarGuia(Guia guia)
         {
-            txtId.Text = paquete.id.ToString();
-            txtNombre.Text = paquete.nombre;
-            txtPrecio.Text = paquete.precio.ToString();
-            textFechaI.Text = paquete.fechaInicio.ToShortDateString();
-            textFechaF.Text = paquete.fechaFin.ToShortDateString();
-
-            if (paquete.guias.Count() == 0)
-            {
-                textBox1.Text = "No hay guias";
-            }
-            else
-            {
-                textBox1.Text = string.Join(", ", paquete.guias);
-            }
-
+            txtId.Text = guia.id.ToString();
+            txtNombre.Text = guia.nombre;
+            txtPrecio.Text = guia.calificacion.ToString();
+            textFechaI.Text = guia.edad.ToString();
+            textFechaF.Text = guia.fechaNacimiento.ToShortDateString();
         }
 
-        
-
-
-            private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtId_TextChanged(object sender, EventArgs e)
         {
 
         }

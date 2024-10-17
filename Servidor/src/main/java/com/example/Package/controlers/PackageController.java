@@ -151,7 +151,7 @@ public class PackageController {
     }
 
     // Actualizar paquete cultural
-    @PutMapping("/update/{id}")
+    @PutMapping("/put/{id}")
     public ResponseEntity<?> updatePackage(
             @PathVariable int id,
             @RequestBody String packageDto) {

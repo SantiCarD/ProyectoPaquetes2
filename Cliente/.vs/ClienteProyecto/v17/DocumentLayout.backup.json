@@ -3,56 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\view\\paquete\\adicionarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\paquete\\adicionarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\paquete\\adicionarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\paquete\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\paquete\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\view\\paquete\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\paquete\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\model\\paquetecultural.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\model\\paquetecultural.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\service\\guiasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\service\\guiasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\service\\paqueteculturalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\service\\paqueteculturalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\view\\paquete\\adicionarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\paquete\\adicionarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\paquete\\adicionarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\paquete\\actualizarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\paquete\\actualizarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\paquete\\actualizarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\paquete\\actualizarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\guiass\\adicionarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guiass\\adicionarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\guiass\\eliminarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guiass\\eliminarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\guiass\\eliminarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guiass\\eliminarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\guiass\\buscarguiaform1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guiass\\buscarguiaform1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\paquete\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\paquete\\buscarpaqueteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\guiass\\actualizarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guiass\\actualizarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\guiass\\actualizarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guiass\\actualizarguiaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|c:\\users\\personal\\desktop\\universidad\\git\\servidor-cliente_paquetes\\cliente\\clienteproyecto\\view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\view\\guia\\buscarguiaform1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guia\\buscarguiaform1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\view\\guia\\buscarguiaform1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guia\\buscarguiaform1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\view\\guia\\buscarguiaform1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\view\\guia\\buscarguiaform1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\clienteproyecto\\model\\guia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62800DF5-D44F-4F1B-B2C9-0EA25F5AB460}|ClienteProyecto\\ClienteProyecto.csproj|solutionrelative:clienteproyecto\\model\\guia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -76,152 +76,158 @@
               "RelativeDocumentMoniker": "ClienteProyecto\\View\\Paquete\\AdicionarPaqueteForm.cs",
               "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\AdicionarPaqueteForm.cs",
               "RelativeToolTip": "ClienteProyecto\\View\\Paquete\\AdicionarPaqueteForm.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAhwGgAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAmwE8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:43:34.169Z",
+              "WhenOpened": "2024-10-17T00:56:11.464Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GuiasService.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\Service\\GuiasService.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\Service\\GuiasService.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\Service\\GuiasService.cs",
-              "RelativeToolTip": "ClienteProyecto\\Service\\GuiasService.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAYwBIAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:55:09.338Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PaqueteCultural.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\Model\\PaqueteCultural.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\Model\\PaqueteCultural.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\Model\\PaqueteCultural.cs",
-              "RelativeToolTip": "ClienteProyecto\\Model\\PaqueteCultural.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAwAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:10:18.981Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BuscarPaqueteForm.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs",
-              "RelativeToolTip": "ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAswFYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T15:41:52.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BuscarPaqueteForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T15:41:48.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PaqueteCulturalService.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\Service\\PaqueteCulturalService.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\Service\\PaqueteCulturalService.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\Service\\PaqueteCulturalService.cs",
-              "RelativeToolTip": "ClienteProyecto\\Service\\PaqueteCulturalService.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAswGMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:58:24.692Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Principal.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Principal.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Principal.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Principal.cs",
-              "RelativeToolTip": "ClienteProyecto\\View\\Principal.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwGoAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:41:19.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "AdicionarPaqueteForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\AdicionarPaqueteForm.cs",
               "RelativeDocumentMoniker": "ClienteProyecto\\View\\Paquete\\AdicionarPaqueteForm.cs",
               "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\AdicionarPaqueteForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "ClienteProyecto\\View\\Paquete\\AdicionarPaqueteForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:43:26.792Z",
+              "WhenOpened": "2024-10-17T00:53:13.074Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BuscarGuiaForm1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.Designer.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.Designer.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.Designer.cs",
-              "RelativeToolTip": "ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.Designer.cs",
-              "ViewState": "AgIAAN4AAAAAAAAAAAAnwOoAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ActualizarPaqueteForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\ActualizarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Paquete\\ActualizarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\ActualizarPaqueteForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\Paquete\\ActualizarPaqueteForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:25:14.527Z"
+              "WhenOpened": "2024-10-17T00:31:14.499Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActualizarPaqueteForm.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\ActualizarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Paquete\\ActualizarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\ActualizarPaqueteForm.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\Paquete\\ActualizarPaqueteForm.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAnwK0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:34:49.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdicionarGuiaForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\AdicionarGuiaForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guiass\\AdicionarGuiaForm.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\AdicionarGuiaForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\Guiass\\AdicionarGuiaForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:53:09.081Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EliminarGuiaForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\EliminarGuiaForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guiass\\EliminarGuiaForm.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\EliminarGuiaForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\Guiass\\EliminarGuiaForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:53:31.836Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EliminarGuiaForm.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\EliminarGuiaForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guiass\\EliminarGuiaForm.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\EliminarGuiaForm.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\Guiass\\EliminarGuiaForm.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAD4v2MAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:01:44.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BuscarGuiaForm1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\BuscarGuiaForm1.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guiass\\BuscarGuiaForm1.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\BuscarGuiaForm1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\Guiass\\BuscarGuiaForm1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:53:07.914Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "BuscarPaqueteForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\Paquete\\BuscarPaqueteForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:53:04.107Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ActualizarGuiaForm.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\ActualizarGuiaForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guiass\\ActualizarGuiaForm.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\ActualizarGuiaForm.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\Guiass\\ActualizarGuiaForm.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAA7wFMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:32:59.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ActualizarGuiaForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\ActualizarGuiaForm.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guiass\\ActualizarGuiaForm.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guiass\\ActualizarGuiaForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ClienteProyecto\\View\\Guiass\\ActualizarGuiaForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:31:00.38Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Principal.cs",
+              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Principal.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Principal.cs",
+              "RelativeToolTip": "ClienteProyecto\\View\\Principal.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAlwIwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T00:30:51.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Principal.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Principal.cs",
               "RelativeDocumentMoniker": "ClienteProyecto\\View\\Principal.cs",
               "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Principal.cs [Dise\u00F1o]",
               "RelativeToolTip": "ClienteProyecto\\View\\Principal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:40:46.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Guia.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\Model\\Guia.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\Model\\Guia.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\Model\\Guia.cs",
-              "RelativeToolTip": "ClienteProyecto\\Model\\Guia.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:08:35.028Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BuscarGuiaForm1.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.cs",
-              "RelativeToolTip": "ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCYAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T15:39:50.783Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BuscarGuiaForm1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.cs",
-              "RelativeDocumentMoniker": "ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Universidad\\Git\\Servidor-Cliente_Paquetes\\Cliente\\ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ClienteProyecto\\View\\Guia\\BuscarGuiaForm1.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T15:38:35.577Z"
+              "WhenOpened": "2024-10-17T00:30:32.894Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
